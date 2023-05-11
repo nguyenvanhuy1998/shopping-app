@@ -1,9 +1,17 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 
-const Card = ({ price, imageUrl }: { price: number; imageUrl: string }) => {
+const Card = ({
+    price,
+    imageUrl,
+    onPress,
+}: {
+    price: number;
+    imageUrl: string;
+    onPress?: () => void;
+}) => {
     return (
-        <TouchableOpacity style={styles.cardItem}>
+        <TouchableOpacity style={styles.cardItem} onPress={onPress}>
             <Image
                 source={{
                     uri: imageUrl,

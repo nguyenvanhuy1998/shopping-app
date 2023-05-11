@@ -90,6 +90,7 @@ const SLEEVES = [
         itemCount: 60,
     },
 ];
+const SIZES = ["XS", "S", "M", "L", "XL", "XXL", "3XL"];
 
 export default {
     AVATAR_URL,
@@ -98,4 +99,5 @@ export default {
     MAX_PRICE,
     COLORS,
     SLEEVES,
+    SIZES,
 };

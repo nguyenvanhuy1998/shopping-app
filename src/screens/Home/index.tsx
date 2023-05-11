@@ -19,8 +19,9 @@ import { BlurView } from "expo-blur";
 import { BottomSheetModal } from "@gorhom/bottom-sheet";
 import CustomBackdrop from "../../components/CustomBackdrop";
 import FilterView from "../../components/FilterView";
+import { TabsStackScreenProps } from "../../navigators/TabsNavigator";
 
-const Home = () => {
+const Home = ({ navigation }: TabsStackScreenProps<"Home">) => {
     const { colors } = useTheme();
     const [categoryIndex, setCategoryIndex] = useState(0);
     const bottomSheetModalRef = useRef<BottomSheetModal>(null);
@@ -123,6 +124,11 @@ const Home = () => {
             </View>
         );
     };
+    const handleChangeDetailScreen = () => {
+        navigation.navigate("Detail", {
+            id: "123",
+        });
+    };
     return (
         <ScrollView
             alwaysBounceVertical={false}
@@ -211,17 +217,20 @@ const Home = () => {
                     {/* Card */}
                     <View style={styles.card}>
                         <Card
+                            onPress={handleChangeDetailScreen}
                             price={130}
-                            imageUrl="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                            imageUrl="https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
                         />
                         <View style={styles.flexOneGap12}>
                             <Card
+                                onPress={handleChangeDetailScreen}
                                 price={130}
-                                imageUrl="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                                imageUrl="https://images.unsplash.com/photo-1571945153237-4929e783af4a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
                             />
                             <Card
+                                onPress={handleChangeDetailScreen}
                                 price={130}
-                                imageUrl="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                                imageUrl="https://images.unsplash.com/photo-1485218126466-34e6392ec754?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2342&q=80"
                             />
                         </View>
                     </View>

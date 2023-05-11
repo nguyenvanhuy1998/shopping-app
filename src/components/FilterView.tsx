@@ -87,6 +87,7 @@ const FilterView = () => {
                             {new Array(7).fill("").map((_, i) => {
                                 return (
                                     <Chip
+                                        key={i}
                                         isSelected={i === 0}
                                         itemCount={i}
                                         label="Item"
@@ -102,6 +103,7 @@ const FilterView = () => {
                             {dummyData.COLORS.map((item, i) => {
                                 return (
                                     <Chip
+                                        key={i}
                                         isSelected={i === 0}
                                         itemCount={item.itemCount}
                                         label={item.label}
@@ -125,6 +127,7 @@ const FilterView = () => {
                             {dummyData.SLEEVES.map((item, i) => {
                                 return (
                                     <Chip
+                                        key={i}
                                         isSelected={i === 0}
                                         itemCount={item.itemCount}
                                         label={item.label}

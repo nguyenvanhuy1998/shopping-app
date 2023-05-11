@@ -1,8 +1,13 @@
 import { View } from "react-native";
 import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import {
+    BottomTabScreenProps,
+    createBottomTabNavigator,
+} from "@react-navigation/bottom-tabs";
 import Icons from "@expo/vector-icons/MaterialIcons";
 import { Cart, Home, Payment, Profile } from "../screens";
+import { CompositeScreenProps } from "@react-navigation/native";
+import { RootStackScreenProps } from "./RootNavigator";
 
 export type TabsStackParamList = {
     Home: undefined;
@@ -11,6 +16,12 @@ export type TabsStackParamList = {
     Profile: undefined;
 };
 const TabsStack = createBottomTabNavigator<TabsStackParamList>();
+export type TabsStackScreenProps<T extends keyof TabsStackParamList> =
+    CompositeScreenProps<
+        BottomTabScreenProps<TabsStackParamList, T>,
+        RootStackScreenProps<"TabsStack">
+    >;
+
 const TabsNavigator = () => {
     return (
         <TabsStack.Navigator
