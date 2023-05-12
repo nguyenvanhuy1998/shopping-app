@@ -8,6 +8,7 @@ import Icons from "@expo/vector-icons/MaterialIcons";
 import { Cart, Home, Payment, Profile } from "../screens";
 import { CompositeScreenProps } from "@react-navigation/native";
 import { RootStackScreenProps } from "./RootNavigator";
+import CustomBottomTabs from "../components/CustomBottomTabs";
 
 export type TabsStackParamList = {
     Home: undefined;
@@ -29,6 +30,7 @@ const TabsNavigator = () => {
                 headerShown: false,
                 tabBarShowLabel: false,
             }}
+            tabBar={(props) => <CustomBottomTabs {...props} />}
         >
             <TabsStack.Screen
                 name="Home"

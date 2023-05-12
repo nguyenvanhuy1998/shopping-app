@@ -73,20 +73,19 @@ const Home = ({ navigation }: TabsStackScreenProps<"Home">) => {
                         style={StyleSheet.absoluteFill}
                     />
                     {/* Masonry Item Content Top */}
-                    <View style={(StyleSheet.absoluteFill, { padding: 12 })}>
+                    <View
+                        style={
+                            (StyleSheet.absoluteFill, { padding: 12, flex: 1 })
+                        }
+                    >
                         <View style={styles.masonryItemContentTop}>
-                            <Text
-                                style={{
-                                    ...styles.masonryItemContentTitle,
-                                    color: colors.text,
-                                }}
-                            >
+                            <Text style={styles.masonryItemContentTitle}>
                                 {item.title}
                             </Text>
                             <View
                                 style={{
                                     ...styles.favorite,
-                                    backgroundColor: colors.background,
+                                    backgroundColor: colors.card,
                                 }}
                             >
                                 <Icons
@@ -96,30 +95,30 @@ const Home = ({ navigation }: TabsStackScreenProps<"Home">) => {
                                 />
                             </View>
                         </View>
+                        {/* FlexOne */}
+                        <View style={styles.flexOne} />
+                        {/* Masonry Item Content Bottom */}
+                        <BlurView
+                            style={styles.masonryItemContentBottom}
+                            intensity={20}
+                        >
+                            <Text
+                                style={styles.masonryItemContentBottomPrice}
+                                numberOfLines={1}
+                            >
+                                ${item.price}
+                            </Text>
+                            <TouchableOpacity
+                                style={styles.masonryItemContentBottomAction}
+                            >
+                                <Icons
+                                    name="add-shopping-cart"
+                                    size={18}
+                                    color={"#000"}
+                                />
+                            </TouchableOpacity>
+                        </BlurView>
                     </View>
-                    {/* FlexOne */}
-                    <View style={styles.flexOne} />
-                    {/* Masonry Item Content Bottom */}
-                    <BlurView
-                        style={styles.masonryItemContentBottom}
-                        intensity={20}
-                    >
-                        <Text
-                            style={styles.masonryItemContentBottomPrice}
-                            numberOfLines={1}
-                        >
-                            ${item.price}
-                        </Text>
-                        <TouchableOpacity
-                            style={styles.masonryItemContentBottomAction}
-                        >
-                            <Icons
-                                name="add-shopping-cart"
-                                size={20}
-                                color={"#000"}
-                            />
-                        </TouchableOpacity>
-                    </BlurView>
                 </View>
             </View>
         );
@@ -206,11 +205,22 @@ const Home = ({ navigation }: TabsStackScreenProps<"Home">) => {
                 <View style={styles.collections}>
                     {/* Title bar */}
                     <View style={styles.row}>
-                        <Text style={styles.titleCollections}>
+                        <Text
+                            style={{
+                                ...styles.titleCollections,
+                                color: colors.text,
+                            }}
+                        >
                             New Collections
                         </Text>
                         <TouchableOpacity>
-                            <Text>See All</Text>
+                            <Text
+                                style={{
+                                    color: colors.primary,
+                                }}
+                            >
+                                See All
+                            </Text>
                         </TouchableOpacity>
                     </View>
 
@@ -259,6 +269,13 @@ const Home = ({ navigation }: TabsStackScreenProps<"Home">) => {
                 index={0}
                 ref={bottomSheetModalRef}
                 backdropComponent={(props) => <CustomBackdrop {...props} />}
+                backgroundStyle={{
+                    borderRadius: 24,
+                    backgroundColor: colors.card,
+                }}
+                handleIndicatorStyle={{
+                    backgroundColor: colors.primary,
+                }}
             >
                 <FilterView />
             </BottomSheetModal>

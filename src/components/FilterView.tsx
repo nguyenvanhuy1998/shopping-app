@@ -10,11 +10,12 @@ import { dummyData } from "../constants";
 import { useTheme } from "@react-navigation/native";
 import Icons from "@expo/vector-icons/MaterialIcons";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import PriceRangeSelector from "./PriceRangeSelector";
 
 const FilterView = () => {
     const { colors } = useTheme();
-    const [minPrice, setMinPrice] = useState(50);
-    const [maxPrice, setMaxPrice] = useState(250);
+    const [startPrice, setStartPrice] = useState(50);
+    const [endPrice, setEndPrice] = useState(250);
     const insets = useSafeAreaInsets();
 
     return (
@@ -23,63 +24,34 @@ const FilterView = () => {
                 <View style={styles.bodyWrap}>
                     {/* Title Filter */}
                     <View style={styles.viewTitleFilter}>
-                        <Text style={styles.titleFilter}>Filters</Text>
+                        <Text
+                            style={{
+                                ...styles.titleFilter,
+                                color: colors.text,
+                            }}
+                        >
+                            Filters
+                        </Text>
                         <TouchableOpacity>
-                            <Text>Reset</Text>
+                            <Text
+                                style={{
+                                    color: colors.text,
+                                    opacity: 0.5,
+                                }}
+                            >
+                                Reset
+                            </Text>
                         </TouchableOpacity>
                     </View>
                     {/* Range Selector */}
-                    <View style={styles.viewRange}>
-                        <Text>Price Range</Text>
-                        <View style={styles.viewFullSlide}>
-                            <View
-                                style={{
-                                    ...styles.bottomLine,
-                                    backgroundColor: colors.border,
-                                }}
-                            >
-                                <View
-                                    style={{
-                                        ...styles.topLine,
-                                        left: `${
-                                            (100 * minPrice) /
-                                            dummyData.MAX_PRICE
-                                        }%`,
-                                        width: `${
-                                            (100 * (maxPrice - minPrice)) /
-                                            dummyData.MAX_PRICE
-                                        }%`,
-                                        backgroundColor: colors.primary,
-                                    }}
-                                />
-                                <View style={styles.sliderLeft}>
-                                    <SliderHandle />
-                                </View>
-                                <View style={styles.sliderRight}>
-                                    <SliderHandle />
-                                </View>
-                            </View>
-                        </View>
-                        <View style={styles.viewMinMaxPrice}>
-                            <Text
-                                style={{
-                                    ...styles.priceMin,
-                                    color: colors.text,
-                                }}
-                            >
-                                $0
-                            </Text>
-                            <Text
-                                style={{
-                                    ...styles.priceMax,
-                                    color: colors.text,
-                                }}
-                            >
-                                ${dummyData.MAX_PRICE}
-                            </Text>
-                        </View>
-                    </View>
-
+                    <PriceRangeSelector
+                        minPrice={0}
+                        maxPrice={dummyData.MAX_PRICE}
+                        startPrice={startPrice}
+                        endPrice={endPrice}
+                        onStartPriceChange={setStartPrice}
+                        onEndPriceChange={setEndPrice}
+                    />
                     {/* Sports Category Filter */}
                     <View style={styles.sportCategory}>
                         <Text style={styles.sportCategoryTitle}>Sports</Text>
@@ -179,25 +151,6 @@ const FilterView = () => {
 
 export default FilterView;
 
-const SliderHandle = () => {
-    const { colors } = useTheme();
-    return (
-        <View
-            style={{
-                ...styles.circle,
-                borderColor: colors.primary,
-                backgroundColor: colors.background,
-            }}
-        >
-            <View
-                style={{
-                    ...styles.dotted,
-                    backgroundColor: colors.primary,
-                }}
-            />
-        </View>
-    );
-};
 const Chip = ({
     isSelected,
     label,
@@ -250,60 +203,10 @@ const styles = StyleSheet.create({
         fontWeight: "700",
     },
 
-    // Range selector
-    viewRange: {
-        paddingHorizontal: 24,
-    },
-    viewFullSlide: {
-        marginTop: 24,
-    },
-    bottomLine: {
-        height: 1,
-        width: "100%",
-        position: "relative",
-    },
-    topLine: {
-        position: "absolute",
-        height: "100%",
-    },
-    circle: {
-        position: "absolute",
-        height: 24,
-        aspectRatio: 1,
-        alignItems: "center",
-        justifyContent: "center",
-        borderRadius: 100,
-        borderWidth: 2,
-        transform: [{ translateX: -12 }, { translateY: -12 }],
-    },
-    dotted: {
-        width: 3,
-        height: 3,
-        borderRadius: 10,
-    },
-    sliderLeft: {
-        position: "absolute",
-        left: "10%",
-    },
-    sliderRight: {
-        position: "absolute",
-        left: "50%",
-    },
-    viewMinMaxPrice: {
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-between",
-        marginTop: 12,
-    },
-    priceMin: {
-        opacity: 0.5,
-    },
-    priceMax: {
-        opacity: 0.5,
-    },
     // Sport
     sportCategory: {
         paddingHorizontal: 24,
+        marginTop: 16,
     },
     sportCategoryTitle: {
         fontSize: 16,

@@ -123,12 +123,12 @@ const styles = StyleSheet.create({
         gap: 12,
     },
     itemCategory: {
-        paddingHorizontal: 24,
-        paddingVertical: 16,
+        paddingHorizontal: 20,
+        paddingVertical: 12,
         borderRadius: 100,
     },
     nameCategory: {
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: "600",
     },
     // Masonry List
@@ -152,6 +152,13 @@ const styles = StyleSheet.create({
         flex: 1,
         fontSize: 16,
         fontWeight: "600",
+        textShadowColor: "rgba(0, 0, 0, 0.3)",
+        textShadowOffset: {
+            height: 1,
+            width: 0,
+        },
+        textShadowRadius: 8,
+        color: "#fff",
     },
     favorite: {
         height: 32,
@@ -164,7 +171,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         backgroundColor: "rgba(0,0,0,0.5)",
         alignItems: "center",
-        padding: 8,
+        padding: 6,
         borderRadius: 100,
         overflow: "hidden",
     },
@@ -173,10 +180,10 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: "600",
         color: "#fff",
-        marginLeft: 4,
+        marginLeft: 8,
     },
     masonryItemContentBottomAction: {
-        paddingHorizontal: 16,
+        paddingHorizontal: 12,
         paddingVertical: 8,
         borderRadius: 100,
         backgroundColor: "#fff",
