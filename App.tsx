@@ -1,11 +1,17 @@
-import {View, Text} from 'react-native';
 import React from 'react';
+import {HomeScreen} from './src/screens';
+import {StatusBar} from 'react-native';
 
-const App = () => {
+const App: React.FC = () => {
   return (
-    <View>
-      <Text>App</Text>
-    </View>
+    <>
+      <StatusBar
+        translucent
+        backgroundColor={'transparent'}
+        barStyle={'dark-content'}
+      />
+      <HomeScreen />
+    </>
   );
 };
 
