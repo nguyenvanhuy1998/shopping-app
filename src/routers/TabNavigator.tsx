@@ -6,7 +6,7 @@ import CartNavigator from './CartNavigator';
 import HomeNavigator from './HomeNavigator';
 import NotificationNavigator from './NotificationNavigator';
 import ProfileNavigator from './ProfileNavigator';
-import {Notification, ShoppingCart, User} from 'iconsax-react-native';
+import {Home2, Notification, ShoppingCart, User} from 'iconsax-react-native';
 import {StyleSheet, View} from 'react-native';
 import {Row} from '@bsdaoquang/rncomponent';
 import {TextComponent} from '../components';
@@ -36,26 +36,44 @@ const TabNavigator: React.FC = () => {
         },
         tabBarIcon: ({focused, color, size}) => {
           color = focused ? colors.white : colors.dark;
-          size = focused ? 14 : 22;
-          let icon = <Entypo name="home" color={color} size={size} />;
+          size = focused ? 16 : 22;
+          let icon = <Home2 name="home" color={color} size={size} />;
           let name = 'Home';
           switch (route.name) {
             case 'CartTab':
-              icon = <ShoppingCart variant="Bold" color={color} size={size} />;
+              icon = (
+                <ShoppingCart
+                  variant={focused ? 'Bold' : 'Bulk'}
+                  color={color}
+                  size={size}
+                />
+              );
               name = 'Cart';
               break;
             case 'NotificationTab':
-              icon = <Notification variant="Bold" color={color} size={size} />;
+              icon = (
+                <Notification
+                  variant={focused ? 'Bold' : 'Bulk'}
+                  color={color}
+                  size={size}
+                />
+              );
               name = 'Notification';
 
               break;
             case 'ProfileTab':
-              icon = <User variant="Bold" color={color} size={size} />;
+              icon = (
+                <User
+                  variant={focused ? 'Bold' : 'Bulk'}
+                  color={color}
+                  size={size}
+                />
+              );
               name = 'Profile';
               break;
 
             default:
-              icon = <Entypo name="home" color={color} size={size} />;
+              icon = <Home2 name="home" color={color} size={size} />;
               name = 'Home';
               break;
           }
