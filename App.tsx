@@ -1,17 +1,12 @@
 import React from 'react';
-import {HomeScreen} from './src/screens';
-import {StatusBar} from 'react-native';
+import {AuthNavigator, MainNavigator} from './src/routers';
+import {NavigationContainer} from '@react-navigation/native';
 
 const App: React.FC = () => {
   return (
-    <>
-      <StatusBar
-        translucent
-        backgroundColor={'transparent'}
-        barStyle={'dark-content'}
-      />
-      <HomeScreen />
-    </>
+    <NavigationContainer>
+      {1 > 2 ? <MainNavigator /> : <AuthNavigator />}
+    </NavigationContainer>
   );
 };
 
