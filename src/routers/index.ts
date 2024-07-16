@@ -4,6 +4,7 @@ import CartNavigator from './CartNavigator';
 import NotificationNavigator from './NotificationNavigator';
 import ProfileNavigator from './ProfileNavigator';
 import HomeNavigator from './HomeNavigator';
+import TabNavigator from './TabNavigator';
 export {
   AuthNavigator,
   MainNavigator,
@@ -11,4 +12,5 @@ export {
   NotificationNavigator,
   ProfileNavigator,
   HomeNavigator,
+  TabNavigator,
 };

@@ -5,7 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 const App: React.FC = () => {
   return (
     <NavigationContainer>
-      {1 > 2 ? <MainNavigator /> : <AuthNavigator />}
+      {1 < 2 ? <MainNavigator /> : <AuthNavigator />}
     </NavigationContainer>
   );
 };
