@@ -1,17 +1,15 @@
 /* eslint-disable react/no-unstable-nested-components */
-import {Row} from '@bsdaoquang/rncomponent';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Home2, Notification, ShoppingCart, User} from 'iconsax-react-native';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {TextComponent} from '../components';
-import {colors, fontFamilies} from '../constants';
+import {TabBarIcon} from '../components';
+import {colors, images} from '../constants';
 import CartNavigator from './CartNavigator';
 import HomeNavigator from './HomeNavigator';
 import NotificationNavigator from './NotificationNavigator';
 import ProfileNavigator from './ProfileNavigator';
+import {Platform} from 'react-native';
 
-type TabParamList = {
+export type TabParamList = {
   HomeTab: undefined;
   CartTab: undefined;
   NotificationTab: undefined;
@@ -19,65 +17,6 @@ type TabParamList = {
 };
 
 const Tab = createBottomTabNavigator<TabParamList>();
-interface TabBarIconProps {
-  focused: boolean;
-  color: string;
-  size: number;
-  routeName: keyof TabParamList;
-}
-
-const TabBarIcon: React.FC<TabBarIconProps> = ({
-  focused,
-  color,
-  size,
-  routeName,
-}) => {
-  color = focused ? colors.white : colors.dark;
-  size = focused ? 16 : 22;
-  let icon = <Home2 color={color} size={size} />;
-  let name = 'Home';
-
-  switch (routeName) {
-    case 'CartTab':
-      icon = (
-        <ShoppingCart
-          variant={focused ? 'Bold' : 'Bulk'}
-          color={color}
-          size={size}
-        />
-      );
-      name = 'Cart';
-      break;
-    case 'NotificationTab':
-      icon = (
-        <Notification
-          variant={focused ? 'Bold' : 'Bulk'}
-          color={color}
-          size={size}
-        />
-      );
-      name = 'Notification';
-      break;
-    case 'ProfileTab':
-      icon = (
-        <User variant={focused ? 'Bold' : 'Bulk'} color={color} size={size} />
-      );
-      name = 'Profile';
-      break;
-    default:
-      icon = <Home2 color={color} size={size} />;
-      name = 'Home';
-      break;
-  }
-
-  return (
-    <Row styles={focused ? styles.focusedRow : undefined}>
-      <View style={focused ? styles.iconContainer : undefined}>{icon}</View>
-      {focused && <TextComponent styles={styles.textStyle} text={name} />}
-    </Row>
-  );
-};
-
 const TabNavigator: React.FC = () => {
   return (
     <Tab.Navigator
@@ -88,6 +27,7 @@ const TabNavigator: React.FC = () => {
           backgroundColor: colors.white,
           borderTopLeftRadius: 30,
           borderTopRightRadius: 30,
+          paddingTop: Platform.OS === 'ios' ? 16 : 0,
           height: 70,
           alignItems: 'center',
           justifyContent: 'center',
@@ -107,23 +47,3 @@ const TabNavigator: React.FC = () => {
 };
 
 export default TabNavigator;
-const styles = StyleSheet.create({
-  iconContainer: {
-    backgroundColor: colors.dark,
-    height: 30,
-    width: 30,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 100,
-  },
-  textStyle: {
-    paddingHorizontal: 6,
-    fontSize: 11,
-    fontFamily: fontFamilies.poppinsMedium,
-  },
-  focusedRow: {
-    backgroundColor: colors.gray,
-    height: 30,
-    borderRadius: 100,
-  },
-});

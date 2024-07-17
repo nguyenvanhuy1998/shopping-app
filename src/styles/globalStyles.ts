@@ -4,6 +4,7 @@ const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
   },
+
   center: {
     alignItems: 'center',
     justifyContent: 'center',
