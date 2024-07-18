@@ -4,7 +4,9 @@ const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
   },
-
+  contentScrollContainer: {
+    flexGrow: 1,
+  },
   center: {
     alignItems: 'center',
     justifyContent: 'center',

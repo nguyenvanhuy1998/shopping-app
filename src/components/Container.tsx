@@ -1,26 +1,3 @@
-/**
- * Custom status bar
-  - Check on Iphone 15 -> Done
-  - Check on Iphone 13 -> Done 
-  - Check on Iphone SE -> Done
-  - Check on Android -> Done
- */
-
-/**
- * Custom safe area
- * - Check safe area in Iphone 15
- * - Check safe area in Iphone 13
- * - Check in Iphone SE
- * - Check on Android
- */
-
-// Custom container with view
-// Custom safe area with iphone and android
-// Custom dynamic island in iphone 15
-// Custom container with scroll view
-// Custom container with input scroll view
-// Custom container with scroll view when use flalist
-
 import React, {ReactNode} from 'react';
 import {
   ColorValue,
@@ -29,6 +6,8 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {globalStyles} from '../styles';
 import FocusAwareStatusBar from './FocusAwareStatusBar';
 
@@ -38,18 +17,51 @@ type Props = {
   barStyle?: StatusBarStyle;
   bgBarStyle?: ColorValue;
   hiddenBar?: boolean;
+  isScrollView?: boolean;
+  isNoArea?: boolean;
 };
 
-const Container = (props: Props) => {
-  const {children, styleContainer, barStyle, bgBarStyle, hiddenBar} = props;
+const Container: React.FC<Props> = ({
+  children,
+  styleContainer,
+  barStyle,
+  bgBarStyle,
+  hiddenBar,
+  isScrollView = true,
+  isNoArea,
+}) => {
+  const insets = useSafeAreaInsets();
+
   return (
-    <View style={[globalStyles.container, styleContainer]}>
+    <View
+      style={[
+        globalStyles.container,
+        isNoArea
+          ? {}
+          : {
+              paddingTop: insets.top,
+              paddingBottom: insets.bottom,
+              paddingLeft: insets.left,
+              paddingRight: insets.right,
+            },
+        styleContainer,
+      ]}>
       <FocusAwareStatusBar
         hidden={hiddenBar}
         barStyle={barStyle}
         backgroundColor={bgBarStyle}
       />
-      {children}
+      {isScrollView ? (
+        <KeyboardAwareScrollView
+          alwaysBounceVertical={false}
+          keyboardShouldPersistTaps="handled"
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={globalStyles.contentScrollContainer}>
+          {children}
+        </KeyboardAwareScrollView>
+      ) : (
+        children
+      )}
     </View>
   );
 };
