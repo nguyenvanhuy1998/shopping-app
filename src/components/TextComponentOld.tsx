@@ -3,7 +3,7 @@ import React, {FC} from 'react';
 import {StyleProp, TextStyle} from 'react-native';
 import {colors, fontFamilies, sizes} from '../constants';
 
-type TextType = 'bigTitle' | 'title' | 'text' | 'desc';
+type TextType = 'bigTitle25' | 'title18' | 'text' | 'desc';
 
 interface Props {
   text: string;
@@ -25,19 +25,19 @@ const TextComponentOld: FC<Props> = ({
   styles,
   type,
 }) => {
-  let fontSize: number = sizes.text;
+  let fontSize: number = sizes.text13;
   switch (type) {
-    case 'bigTitle':
-      fontSize = sizes.bigTitle;
+    case 'bigTitle25':
+      fontSize = sizes.bigTitle25;
       break;
-    case 'title':
-      fontSize = sizes.title;
+    case 'title18':
+      fontSize = sizes.title18;
       break;
     case 'desc':
-      fontSize = sizes.desc;
+      fontSize = sizes.desc11;
       break;
     default:
-      fontSize = sizes.text;
+      fontSize = sizes.text13;
       break;
   }
 
