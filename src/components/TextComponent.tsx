@@ -1,4 +1,4 @@
-import {Label} from '@bsdaoquang/rncomponent';
+import {Text} from '@bsdaoquang/rncomponent';
 import React, {FC} from 'react';
 import {StyleProp, TextStyle} from 'react-native';
 import {colors, fontFamilies, sizes} from '../constants';
@@ -42,7 +42,7 @@ const TextComponent: FC<Props> = ({
   }
 
   return (
-    <Label
+    <Text
       text={text}
       font={font ?? fontFamilies.poppinsRegular}
       flex={flex}

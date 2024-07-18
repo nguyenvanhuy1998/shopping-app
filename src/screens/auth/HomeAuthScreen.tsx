@@ -1,31 +1,31 @@
 import {Button, Section} from '@bsdaoquang/rncomponent';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {ImageBackground, StatusBar, StyleSheet, View} from 'react-native';
+import {ImageBackground, StyleSheet, View} from 'react-native';
 import {colors, fontFamilies, images} from '../../constants';
+import {AuthStackParamList} from '../../routers/AuthNavigator';
 import {globalStyles} from '../../styles';
 
-const HomeAuthScreen: React.FC = () => {
+const HomeAuthScreen = () => {
+  const navigation = useNavigation<NavigationProp<AuthStackParamList>>();
   return (
-    <>
-      <StatusBar hidden />
-      <ImageBackground source={images.bgLogin} style={globalStyles.container}>
-        <View style={globalStyles.container} />
-        <Section styles={styles.section}>
-          <Button
-            title="Login"
-            onPress={() => {}}
-            textStyleProps={styles.loginButtonText}
-          />
-          <Button
-            title="Sign Up"
-            color="transparent"
-            styles={styles.signUpButton}
-            textStyleProps={styles.signUpButtonText}
-            onPress={() => {}}
-          />
-        </Section>
-      </ImageBackground>
-    </>
+    <ImageBackground source={images.bgLogin} style={globalStyles.container}>
+      <View style={globalStyles.container} />
+      <Section styles={styles.section}>
+        <Button
+          title="Login"
+          onPress={() => navigation.navigate('WelcomeScreen')}
+          textStyleProps={styles.loginButtonText}
+        />
+        <Button
+          title="Sign Up"
+          color="transparent"
+          styles={styles.signUpButton}
+          textStyleProps={styles.signUpButtonText}
+          onPress={() => navigation.navigate('WelcomeScreen')}
+        />
+      </Section>
+    </ImageBackground>
   );
 };
 const styles = StyleSheet.create({
