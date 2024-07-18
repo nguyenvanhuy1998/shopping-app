@@ -15,7 +15,7 @@ interface Props {
   styles?: StyleProp<TextStyle>;
   type?: TextType;
 }
-const TextComponent: FC<Props> = ({
+const TextComponentOld: FC<Props> = ({
   text,
   size,
   font,
@@ -54,4 +54,4 @@ const TextComponent: FC<Props> = ({
   );
 };
 
-export default TextComponent;
+export default TextComponentOld;

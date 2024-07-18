@@ -1,10 +1,10 @@
 import React from 'react';
-import {Container, TextComponent} from '../../components';
+import {Container, TextComponentOld} from '../../components';
 
 const LoginScreen = () => {
   return (
     <Container>
-      <TextComponent text="Login Screen" />
+      <TextComponentOld text="Login Screen" />
     </Container>
   );
 };

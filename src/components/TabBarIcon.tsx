@@ -4,7 +4,7 @@ import {TabParamList} from '../routers/TabNavigator';
 import {Row} from '@bsdaoquang/rncomponent';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import TextComponent from './TextComponent';
+import TextComponentOld from './TextComponentOld';
 
 interface TabBarIconProps {
   focused: boolean;
@@ -60,7 +60,7 @@ const TabBarIcon: React.FC<TabBarIconProps> = ({
   return (
     <Row styles={focused ? styles.focusedRow : undefined}>
       <View style={focused ? styles.iconContainer : undefined}>{icon}</View>
-      {focused && <TextComponent styles={styles.textStyle} text={name} />}
+      {focused && <TextComponentOld styles={styles.textStyle} text={name} />}
     </Row>
   );
 };

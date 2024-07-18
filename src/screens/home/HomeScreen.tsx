@@ -1,10 +1,10 @@
 import React from 'react';
-import {Container, TextComponent} from '../../components';
+import {Container, TextComponentOld} from '../../components';
 
 const HomeScreen = () => {
   return (
     <Container isScroll={false}>
-      <TextComponent text="Home Screen" />
+      <TextComponentOld text="Home Screen" />
     </Container>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, TextComponent} from '../../components';
+import {Container, TextComponentOld} from '../../components';
 import {colors} from '../../constants';
 
 const WelcomeScreen = () => {
@@ -10,7 +10,7 @@ const WelcomeScreen = () => {
       }}
       barStyle="dark-content"
       bgBarStyle={colors.white}>
-      <TextComponent text="123" />
+      <TextComponentOld text="123" />
     </Container>
   );
 };
