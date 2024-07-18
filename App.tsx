@@ -1,6 +1,7 @@
+import {NavigationContainer} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
 import {AuthNavigator, MainNavigator} from './src/routers';
-import {NavigationContainer} from '@react-navigation/native';
+import {TemplateScreen} from './src/screens';
 import SplashScreen from './src/screens/SplashScreen';
 
 const App: React.FC = () => {

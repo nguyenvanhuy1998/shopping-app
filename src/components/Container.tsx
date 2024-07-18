@@ -1,64 +1,57 @@
+/**
+ * Custom status bar
+  - Check on Iphone 15 -> Done
+  - Check on Iphone 13 -> Done 
+  - Check on Iphone SE -> Done
+  - Check on Android -> Done
+ */
+
+/**
+ * Custom safe area
+ * - Check safe area in Iphone 15
+ * - Check safe area in Iphone 13
+ * - Check in Iphone SE
+ * - Check on Android
+ */
+
+// Custom container with view
+// Custom safe area with iphone and android
+// Custom dynamic island in iphone 15
+// Custom container with scroll view
+// Custom container with input scroll view
+// Custom container with scroll view when use flalist
+
 import React, {ReactNode} from 'react';
 import {
-  Platform,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
+  ColorValue,
+  StatusBarStyle,
+  StyleProp,
   View,
+  ViewStyle,
 } from 'react-native';
 import {globalStyles} from '../styles';
-import {Row} from '@bsdaoquang/rncomponent';
-import TextComponent from './TextComponent';
-import {fontFamilies} from '../constants';
+import FocusAwareStatusBar from './FocusAwareStatusBar';
 
 type Props = {
+  styleContainer?: StyleProp<ViewStyle>;
   children: ReactNode;
-  title?: string;
-  back?: boolean;
-  left?: ReactNode;
-  right?: ReactNode;
-  isScroll?: boolean;
+  barStyle?: StatusBarStyle;
+  bgBarStyle?: ColorValue;
+  hiddenBar?: boolean;
 };
 
 const Container = (props: Props) => {
-  const {children, title, back, left, right, isScroll = true} = props;
+  const {children, styleContainer, barStyle, bgBarStyle, hiddenBar} = props;
   return (
-    <SafeAreaView style={[globalStyles.container]}>
-      {(back || left || title || right) && (
-        <Row
-          styles={{
-            padding: 16,
-            paddingTop:
-              Platform.OS === 'android' ? StatusBar.currentHeight : 42,
-          }}>
-          {back && <TextComponent text="Back" />}
-          {left && !back && <TextComponent text="Left" />}
-          <View
-            style={{
-              paddingHorizontal: 16,
-              flex: 1,
-            }}>
-            {title && (
-              <TextComponent
-                type="bigTitle"
-                font={fontFamilies.poppinsMedium}
-                text={title}
-              />
-            )}
-          </View>
-          {right && right}
-        </Row>
-      )}
-      {isScroll ? (
-        <ScrollView style={[globalStyles.container]}>{children}</ScrollView>
-      ) : (
-        <View style={[globalStyles.container]}>{children}</View>
-      )}
-    </SafeAreaView>
+    <View style={[globalStyles.container, styleContainer]}>
+      <FocusAwareStatusBar
+        hidden={hiddenBar}
+        barStyle={barStyle}
+        backgroundColor={bgBarStyle}
+      />
+      {children}
+    </View>
   );
 };
 
 export default Container;
-
-const styles = StyleSheet.create({});
