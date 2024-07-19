@@ -1,6 +1,6 @@
 import React from 'react';
 import {ColorValue, StyleProp, Text, TextProps, TextStyle} from 'react-native';
-import {colors, fontFamilies, sizes} from '../constants';
+import {colors, fontFamilies, fontSizes} from '../constants';
 
 interface Props extends TextProps {
   text: string;
@@ -10,7 +10,7 @@ interface Props extends TextProps {
   fontFamily?: string;
   lineHeight?: number;
   textAlign?: 'auto' | 'left' | 'right' | 'center' | 'justify';
-  type?: 'bigTitle25' | 'title18' | 'text14';
+  type?: 'size25' | 'size18' | 'size14';
 }
 
 const getStyleByType = (
@@ -21,25 +21,25 @@ const getStyleByType = (
   textAlign: 'auto' | 'left' | 'right' | 'center' | 'justify',
 ): TextStyle => {
   switch (type) {
-    case 'bigTitle25':
+    case 'size25':
       return {
-        fontSize: sizes.bigTitle25,
+        fontSize: fontSizes.size25,
         color: color ?? colors.dark,
         fontFamily: fontFamily ?? fontFamilies.poppinsBold,
         lineHeight,
         textAlign,
       };
-    case 'title18':
+    case 'size18':
       return {
-        fontSize: sizes.title18,
+        fontSize: fontSizes.size18,
         color: color ?? colors.dark,
         fontFamily: fontFamily ?? fontFamilies.poppinsBold,
         lineHeight,
         textAlign,
       };
-    case 'text14':
+    case 'size14':
       return {
-        fontSize: sizes.text14,
+        fontSize: fontSizes.size14,
         color: color ?? colors.dark,
         fontFamily: fontFamily ?? fontFamilies.poppinsSemiBold,
         lineHeight,
@@ -47,7 +47,7 @@ const getStyleByType = (
       };
     default:
       return {
-        fontSize: sizes.desc11,
+        fontSize: fontSizes.size11,
         color: color ?? colors.desc,
         fontFamily: fontFamily ?? fontFamilies.robotoRegular,
         lineHeight,
@@ -70,7 +70,7 @@ const TextComponent: React.FC<Props> = ({
   const textStyle = type
     ? getStyleByType(type, color, fontFamily, lineHeight, textAlign)
     : {
-        fontSize: fontSize ?? sizes.desc11,
+        fontSize: fontSize ?? fontSizes.size11,
         color: color ?? colors.desc,
         fontFamily: fontFamily ?? fontFamilies.robotoRegular,
         lineHeight,
