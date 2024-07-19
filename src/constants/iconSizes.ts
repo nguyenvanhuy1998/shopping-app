@@ -1,15 +1,9 @@
-enum IconSizes {
-  SMALL = 20,
-  MEDIUM = 30,
-  LARGE = 35,
-  EXTRA_LARGE = 50,
-  EXTRA_EXTRA_LARGE = 56,
-}
 const iconSizes = {
-  extraLarge: IconSizes.EXTRA_LARGE,
-  large: IconSizes.LARGE,
-  medium: IconSizes.MEDIUM,
-  small: IconSizes.SMALL,
-  extraExtraLarge: IconSizes.EXTRA_EXTRA_LARGE,
+  extraLarge56: 56,
+  extraLarge50: 50,
+  large40: 40,
+  medium35: 35,
+  medium30: 30,
+  small20: 20,
 };
 export default iconSizes;

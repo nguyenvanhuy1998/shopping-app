@@ -1,53 +1,58 @@
 import React, {ReactNode} from 'react';
-import {
-  ColorValue,
-  StyleProp,
-  StyleSheet,
-  TouchableOpacity,
-  ViewStyle,
-} from 'react-native';
-import {colors, iconSizes} from '../constants';
+import {ColorValue, StyleProp, TouchableOpacity, ViewStyle} from 'react-native';
+import {colors} from '../constants';
 import {globalStyles} from '../styles';
+import {getBackgroundColor, getDimensionSizeRound} from '../utils';
 
 type Props = {
   stylesContainer?: StyleProp<ViewStyle>;
-  prefix?: ReactNode;
+  iconRound?: ReactNode;
+  outline?: boolean;
+  sizeRound?:
+    | 'extraLarge56'
+    | 'extraLarge50'
+    | 'large40'
+    | 'medium35'
+    | 'medium30'
+    | 'small20';
   onPress: () => void;
-  width?: number;
-  height?: number;
   borderRadius?: number;
   backgroundColor?: ColorValue;
+  type?: 'link' | 'text' | 'round';
+  isShadow?: boolean;
 };
 
 const ButtonComponent = ({
   stylesContainer,
-  prefix,
-  width = iconSizes.extraLarge,
-  height = iconSizes.extraLarge,
+  iconRound,
   borderRadius = 100,
   backgroundColor = colors.dark,
+  outline,
+  sizeRound,
+  isShadow,
+  type,
   onPress,
 }: Props) => {
-  return (
-    <TouchableOpacity
-      style={[
-        globalStyles.center,
-        {
-          width,
-          height,
-          borderRadius,
-          backgroundColor,
-        },
-        stylesContainer,
-      ]}
-      onPress={onPress}>
-      {prefix && prefix}
-    </TouchableOpacity>
-  );
+  if (type === 'round') {
+    return (
+      <TouchableOpacity
+        style={[
+          globalStyles.center,
+          {
+            width: getDimensionSizeRound(sizeRound),
+            height: getDimensionSizeRound(sizeRound),
+            borderRadius,
+            backgroundColor: getBackgroundColor(outline, backgroundColor),
+          },
+          isShadow ? globalStyles.shadow : {},
+          stylesContainer,
+        ]}
+        onPress={onPress}>
+        {iconRound && iconRound}
+      </TouchableOpacity>
+    );
+  }
+  return null;
 };
 
 export default ButtonComponent;
-
-const styles = StyleSheet.create({
-  buttonRound: {},
-});

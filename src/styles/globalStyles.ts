@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {spacings} from '../constants';
+import {colors, spacings} from '../constants';
 
 const globalStyles = StyleSheet.create({
   container: {
@@ -10,6 +10,10 @@ const globalStyles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
+  },
+  spaceBetween: {
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   center: {
     alignItems: 'center',
@@ -28,6 +32,15 @@ const globalStyles = StyleSheet.create({
   section: {
     paddingHorizontal: spacings.space_24,
     paddingVertical: spacings.space_16,
+  },
+  dot: {
+    position: 'absolute',
+    right: -spacings.space_4,
+    top: -spacings.space_4,
+    backgroundColor: colors.dark,
+    width: spacings.space_15,
+    height: spacings.space_15,
+    borderRadius: 100,
   },
 });
 export default globalStyles;

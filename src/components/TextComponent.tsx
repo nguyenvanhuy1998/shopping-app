@@ -3,7 +3,7 @@ import {ColorValue, StyleProp, Text, TextProps, TextStyle} from 'react-native';
 import {colors, fontFamilies, fontSizes} from '../constants';
 
 interface Props extends TextProps {
-  text: string;
+  text?: string;
   styles?: StyleProp<TextStyle>;
   fontSize?: number;
   color?: ColorValue;
@@ -57,7 +57,7 @@ const getStyleByType = (
 };
 
 const TextComponent: React.FC<Props> = ({
-  text,
+  text = '',
   fontSize,
   color,
   fontFamily,
