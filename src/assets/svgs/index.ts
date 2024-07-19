@@ -9,6 +9,7 @@ import ArrowLeft from './ArrowLeft.svg';
 import Badge from './Badge.svg';
 import HeartBlack from './HeartBlack.svg';
 import ArrowRight from './ArrowRight.svg';
+import Cart from './Cart.svg';
 export {
   HomeIcon,
   CartIcon,
@@ -21,4 +22,5 @@ export {
   Badge,
   HeartBlack,
   ArrowRight,
+  Cart,
 };

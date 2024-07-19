@@ -3,6 +3,7 @@ import {
   ArrowLeft,
   ArrowRight,
   Badge,
+  Cart,
   Filter,
   Heart,
   HeartBlack,
@@ -134,6 +135,42 @@ const TemplateScreen = () => {
           borderRadius={7}
           outline
           iconRound={<ArrowRight />}
+        />
+      </Section>
+      {/* Section Button Primary */}
+      <Section>
+        <ButtonComponent
+          onPress={() => {}}
+          text="Get Now"
+          size="small"
+          width={spacings.space_30 + spacings.space_20 * 2}
+        />
+        <ButtonComponent
+          stylesContainer={{
+            marginTop: spacings.space_10,
+          }}
+          onPress={() => {}}
+          prefix={<Cart />}
+          text="Add to cart"
+        />
+        <ButtonComponent
+          stylesContainer={{
+            marginTop: spacings.space_10,
+          }}
+          borderRadius={spacings.space_10}
+          onPress={() => {}}
+          text="Proceed to Checkout"
+          justifyContent="space-between"
+          suffix={
+            <ButtonComponent
+              outline
+              borderRadius={7}
+              sizeRound="medium30"
+              onPress={() => {}}
+              type="round"
+              iconRound={<ArrowRight />}
+            />
+          }
         />
       </Section>
     </Container>
