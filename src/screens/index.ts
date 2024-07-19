@@ -3,7 +3,6 @@ import LoginScreen from './auth/LoginScreen';
 import NotificationsScreen from './notifications/NotificationsScreen';
 import CartScreen from './cart/CartScreen';
 import ProfileScreen from './profiles/ProfileScreen';
-import HomeAuthScreen from './auth/HomeAuthScreen';
 import WelcomeScreen from './auth/WelcomeScreen';
 import TemplateScreen from './TemplateScreen';
 
@@ -13,7 +12,6 @@ export {
   NotificationsScreen,
   CartScreen,
   ProfileScreen,
-  HomeAuthScreen,
   WelcomeScreen,
   TemplateScreen,
 };

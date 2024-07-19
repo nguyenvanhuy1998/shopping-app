@@ -3,7 +3,7 @@ import {
   NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
 import React from 'react';
-import {HomeAuthScreen, TemplateScreen, WelcomeScreen} from '../screens';
+import {TemplateScreen, WelcomeScreen} from '../screens';
 
 export type AuthStackParamList = {
   HomeAuthScreen: undefined;
@@ -21,7 +21,6 @@ const AuthNavigator: React.FC = () => {
   return (
     <Stack.Navigator screenOptions={screenOptions}>
       <Stack.Screen name="TemplateScreen" component={TemplateScreen} />
-      <Stack.Screen name="HomeAuthScreen" component={HomeAuthScreen} />
       <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
     </Stack.Navigator>
   );

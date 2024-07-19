@@ -1,11 +1,11 @@
+import {View, Text} from 'react-native';
 import React from 'react';
-import {Container, TextComponentOld} from '../../components';
 
 const LoginScreen = () => {
   return (
-    <Container>
-      <TextComponentOld text="Login Screen" />
-    </Container>
+    <View>
+      <Text>LoginScreen</Text>
+    </View>
   );
 };
 
