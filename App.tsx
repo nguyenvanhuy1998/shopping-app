@@ -1,7 +1,6 @@
 import {NavigationContainer} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
 import {AuthNavigator, MainNavigator} from './src/routers';
-import {TemplateScreen} from './src/screens';
 import SplashScreen from './src/screens/SplashScreen';
 
 const App: React.FC = () => {
@@ -17,7 +16,7 @@ const App: React.FC = () => {
     <NavigationContainer>
       {isWelcome ? (
         <SplashScreen />
-      ) : isLogin ? (
+      ) : !isLogin ? (
         <MainNavigator />
       ) : (
         <AuthNavigator />

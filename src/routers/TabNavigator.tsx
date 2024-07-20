@@ -3,11 +3,13 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
 import {Platform} from 'react-native';
 import {TabBarIcon} from '../components';
-import {colors} from '../constants';
+import {colors, spacings} from '../constants';
 import CartNavigator from './CartNavigator';
 import HomeNavigator from './HomeNavigator';
 import NotificationNavigator from './NotificationNavigator';
 import ProfileNavigator from './ProfileNavigator';
+import {globalStyles} from '../styles';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 export type TabParamList = {
   HomeTab: undefined;
@@ -18,6 +20,7 @@ export type TabParamList = {
 
 const Tab = createBottomTabNavigator<TabParamList>();
 const TabNavigator: React.FC = () => {
+  const insets = useSafeAreaInsets();
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
@@ -26,17 +29,14 @@ const TabNavigator: React.FC = () => {
         tabBarStyle: {
           backgroundColor: colors.white,
           borderTopLeftRadius: 30,
+          height:
+            Platform.OS === 'ios' ? spacings.space_56 + insets.bottom : 70,
           borderTopRightRadius: 30,
-          paddingTop: Platform.OS === 'ios' ? 16 : 0,
-          height: 70,
-          alignItems: 'center',
-          justifyContent: 'center',
+          ...globalStyles.shadow,
         },
-        tabBarIcon: (props: {
-          focused: boolean;
-          color: string;
-          size: number;
-        }) => <TabBarIcon />,
+        tabBarIcon: (props: {focused: boolean; size: number}) => (
+          <TabBarIcon {...props} routeName={route} />
+        ),
       })}>
       <Tab.Screen name="HomeTab" component={HomeNavigator} />
       <Tab.Screen name="CartTab" component={CartNavigator} />

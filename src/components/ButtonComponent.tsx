@@ -18,7 +18,7 @@ type Props = {
     | 'medium30'
     | 'small20';
   size?: 'small' | 'medium' | 'large';
-  onPress: () => void;
+  onPress?: () => void;
   borderRadius?: number;
   backgroundColor?: ColorValue;
   type?: 'link' | 'text' | 'round';
