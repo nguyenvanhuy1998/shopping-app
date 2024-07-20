@@ -5,6 +5,8 @@ enum Color {
   Gray2 = '#AAAAAA',
   Gray3 = '#EEEEEE',
   White = '#FFFFFF',
+  Title = '#072F4A',
+  Primary = '#f52d56',
 }
 const colors = {
   dark: Color.Dark,
@@ -13,5 +15,7 @@ const colors = {
   gray2: Color.Gray2,
   gray3: Color.Gray3,
   white: Color.White,
+  title: Color.Title,
+  primary: Color.Primary,
 };
 export default colors;

@@ -1,3 +1,5 @@
+import {Dimensions} from 'react-native';
+
 interface Spacings {
   space_2: number;
   space_4: number;
@@ -16,6 +18,8 @@ interface Spacings {
   space_36: number;
   space_50: number;
   space_56: number;
+  width: number;
+  height: number;
 }
 
 const spacings: Spacings = {
@@ -36,5 +40,7 @@ const spacings: Spacings = {
   space_36: 36,
   space_50: 50,
   space_56: 56,
+  width: Dimensions.get('window').width,
+  height: Dimensions.get('window').height,
 };
 export default spacings;

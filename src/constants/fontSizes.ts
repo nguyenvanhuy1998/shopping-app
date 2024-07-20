@@ -1,4 +1,8 @@
 interface FontSizes {
+  h1: number;
+  h2: number;
+  h3: number;
+
   size25: number;
   size20: number;
   size18: number;
@@ -10,6 +14,10 @@ interface FontSizes {
 }
 
 const fontSizes: FontSizes = {
+  h1: 22,
+  h2: 20,
+  h3: 18,
+
   size25: 25,
   size20: 20,
   size18: 18,

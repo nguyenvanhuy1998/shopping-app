@@ -16,7 +16,7 @@ const App: React.FC = () => {
     <NavigationContainer>
       {isWelcome ? (
         <SplashScreen />
-      ) : !isLogin ? (
+      ) : isLogin ? (
         <MainNavigator />
       ) : (
         <AuthNavigator />
