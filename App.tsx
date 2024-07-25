@@ -8,9 +8,10 @@ const App: React.FC = () => {
 
   return (
     <NavigationContainer
-      onReady={() => {
-        BootSplash.hide();
-      }}>
+    // onReady={() => {
+    //   BootSplash.hide();
+    // }}
+    >
       {isLogin ? <MainNavigator /> : <AuthNavigator />}
     </NavigationContainer>
   );
