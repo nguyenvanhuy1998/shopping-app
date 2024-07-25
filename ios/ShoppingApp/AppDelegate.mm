@@ -3,6 +3,7 @@
 
 #import <React/RCTBundleURLProvider.h>
 
+
 @implementation AppDelegate
 
 // ⬇️ Add this before file @end (for react-native 0.74+)
@@ -13,6 +14,7 @@
   // You can add your custom initial props in the dictionary below.
   // They will be passed down to the ViewController used by React Native.
   self.initialProps = @{};
+
 
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
