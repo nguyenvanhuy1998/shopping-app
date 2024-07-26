@@ -3,10 +3,11 @@ import {
   NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
 import React from 'react';
-import {LoginScreen} from '../screens';
+import {LoginScreen, WelcomeScreen} from '../screens';
 
 export type AuthStackParamList = {
   LoginScreen: undefined;
+  WelcomeScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<AuthStackParamList>();
@@ -18,6 +19,7 @@ const screenOptions: NativeStackNavigationOptions = {
 const AuthNavigator: React.FC = () => {
   return (
     <Stack.Navigator screenOptions={screenOptions}>
+      <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
     </Stack.Navigator>
   );

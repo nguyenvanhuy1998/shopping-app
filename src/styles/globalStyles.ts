@@ -19,6 +19,9 @@ const globalStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  jusEnd: {
+    justifyContent: 'flex-end',
+  },
   shadow: {
     shadowColor: 'rgba(0,0,0,0.35)',
     shadowOffset: {
