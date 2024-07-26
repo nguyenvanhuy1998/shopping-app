@@ -1,6 +1,6 @@
 import React from 'react';
-import {ColorValue, StyleProp, StyleSheet, Text, TextStyle} from 'react-native';
-import {colors, fontFamilies, fontSizes} from '../constants';
+import {ColorValue, StyleProp, Text, TextStyle} from 'react-native';
+import {getTextStyle} from '../utils';
 
 type Props = {
   text?: string;
@@ -14,7 +14,7 @@ type Props = {
   lineHeight?: number;
 };
 
-const TextComponent = ({
+const TextComponent: React.FC<Props> = ({
   text,
   marginTop,
   styles,
@@ -24,65 +24,12 @@ const TextComponent = ({
   fontFamily,
   textAlign = 'left',
   lineHeight,
-}: Props) => {
-  const getTextStyle = () => {
-    if (typeText === 'Heading') {
-      return {
-        fontSize:
-          size === 'small'
-            ? fontSizes.size20
-            : size === 'medium'
-            ? fontSizes.size24
-            : fontSizes.size32,
-        color: color ?? colors.dark,
-        fontFamily: fontFamily ?? fontFamilies.poppinsBold,
-        lineHeight,
-        textAlign,
-      };
-    }
-    if (typeText === 'SubHeading') {
-      return {
-        fontSize:
-          size === 'small'
-            ? fontSizes.size16
-            : size === 'medium'
-            ? fontSizes.size18
-            : fontSizes.size20,
-        color: color ?? colors.dark,
-        fontFamily: fontFamily ?? fontFamilies.poppinsBold,
-        lineHeight,
-        textAlign,
-      };
-    }
-    if (typeText === 'Body') {
-      return {
-        fontSize:
-          size === 'small'
-            ? fontSizes.size12
-            : size === 'medium'
-            ? fontSizes.size14
-            : fontSizes.size16,
-        color: color ?? colors.dark,
-        fontFamily: fontFamily ?? fontFamilies.robotoRegular,
-        lineHeight,
-        textAlign,
-      };
-    }
-    return {
-      fontSize: fontSizes.size10,
-      color: color ?? colors.desc,
-      fontFamily: fontFamily ?? fontFamilies.robotoRegular,
-      lineHeight,
-      textAlign,
-    };
-  };
+}) => {
   return (
     <Text
       style={[
-        {
-          marginTop,
-        },
-        getTextStyle(),
+        {marginTop},
+        getTextStyle(typeText, size, color, fontFamily, textAlign, lineHeight),
         styles,
       ]}>
       {text}
@@ -91,5 +38,3 @@ const TextComponent = ({
 };
 
 export default TextComponent;
-
-const styles = StyleSheet.create({});
