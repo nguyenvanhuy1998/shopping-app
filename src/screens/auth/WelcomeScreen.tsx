@@ -4,11 +4,18 @@ import {colors, images, spacings} from '../../constants';
 import {globalStyles} from '../../styles';
 import {ButtonComponent, Section} from '../../components';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
+import {AuthStackParamList} from '../../routers/AuthNavigator';
 
 const WelcomeScreen = () => {
   const inset = useSafeAreaInsets();
-  const handleLogin = () => {};
-  const handleSignUp = () => {};
+  const navigation = useNavigation<NavigationProp<AuthStackParamList>>();
+  const handleLogin = () => {
+    navigation.navigate('OnboardingScreen');
+  };
+  const handleSignUp = () => {
+    navigation.navigate('OnboardingScreen');
+  };
   return (
     <ImageBackground
       source={images.welcomeBg}

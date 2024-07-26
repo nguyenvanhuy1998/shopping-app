@@ -1,6 +1,6 @@
 import React from 'react';
 import {ColorValue, StyleProp, TouchableOpacity, ViewStyle} from 'react-native';
-import {colors, fontFamilies, fontSizes, spacings} from '../constants';
+import {colors, spacings} from '../constants';
 import {globalStyles} from '../styles';
 import TextComponent from './TextComponent';
 
@@ -13,9 +13,7 @@ interface Props {
   onPress?: () => void;
   text?: string;
   borderRadius?: number;
-  fontSize?: number;
   color?: ColorValue;
-  fontFamily?: string;
 }
 
 const ButtonComponent: React.FC<Props> = ({
@@ -27,9 +25,7 @@ const ButtonComponent: React.FC<Props> = ({
   borderRadius = 100,
   borderWidth = 1,
   borderColor,
-  fontSize = fontSizes.size16,
   color,
-  fontFamily = fontFamilies.poppinsBold,
 }) => {
   const getBackgroundColor = (): ColorValue =>
     backgroundColor ?? (typeButton === 'outline' ? colors.white : colors.dark);
@@ -57,9 +53,9 @@ const ButtonComponent: React.FC<Props> = ({
       onPress={onPress}>
       <TextComponent
         text={text}
-        fontSize={fontSize}
+        typeText="SubHeading"
+        size="small"
         color={getColorText()}
-        fontFamily={fontFamily}
       />
     </TouchableOpacity>
   );
