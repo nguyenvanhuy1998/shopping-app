@@ -11,10 +11,10 @@ const WelcomeScreen = () => {
   const inset = useSafeAreaInsets();
   const navigation = useNavigation<NavigationProp<AuthStackParamList>>();
   const handleLogin = () => {
-    navigation.navigate('OnboardingScreen');
+    navigation.navigate('LoginScreen');
   };
   const handleSignUp = () => {
-    navigation.navigate('OnboardingScreen');
+    navigation.navigate('SignUpScreen');
   };
   return (
     <ImageBackground

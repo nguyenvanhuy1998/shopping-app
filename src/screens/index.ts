@@ -5,6 +5,7 @@ import CartScreen from './cart/CartScreen';
 import ProfileScreen from './profiles/ProfileScreen';
 import WelcomeScreen from './auth/WelcomeScreen';
 import OnboardingScreen from './auth/OnboardingScreen';
+import SignUpScreen from './auth/SignUpScreen';
 
 export {
   HomeScreen,
@@ -14,4 +15,5 @@ export {
   ProfileScreen,
   WelcomeScreen,
   OnboardingScreen,
+  SignUpScreen,
 };

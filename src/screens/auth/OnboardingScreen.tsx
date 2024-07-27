@@ -9,11 +9,16 @@ import Animated, {
   useSharedValue,
 } from 'react-native-reanimated';
 import {globalStyles} from '../../styles';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
+import {AuthStackParamList} from '../../routers/AuthNavigator';
 
 const OnboardingScreen = () => {
+  const navigation = useNavigation<NavigationProp<AuthStackParamList>>();
+
   const animatedValue = useSharedValue(0);
   const flatListRef = useAnimatedRef<FlatList<OnboardingProps>>();
   const flatListIndex = useSharedValue(0);
+
   const onScroll = useAnimatedScrollHandler({
     onScroll: e => {
       animatedValue.value = e.contentOffset.x;
@@ -34,7 +39,7 @@ const OnboardingScreen = () => {
         index: flatListIndex.value + 1,
       });
     } else {
-      console.log('Navigate to next screen');
+      navigation.navigate('WelcomeScreen');
     }
   };
 
