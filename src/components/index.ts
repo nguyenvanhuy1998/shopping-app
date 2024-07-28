@@ -6,6 +6,7 @@ import Button from './Button';
 import Section from './Section';
 import Row from './Row';
 import Image from './Image';
+import Input from './Input';
 
 export {
   Container,
@@ -16,4 +17,5 @@ export {
   Section,
   Row,
   Image,
+  Input,
 };

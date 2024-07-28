@@ -6,15 +6,17 @@ type Props = {
   children: ReactNode;
   styles?: StyleProp<ViewStyle>;
   flex?: number;
+  marginTop?: number;
 };
 
-const Section = ({children, styles, flex}: Props) => {
+const Section = ({children, styles, flex, marginTop}: Props) => {
   return (
     <View
       style={[
         globalStyles.section,
         {
           flex: flex ?? 0,
+          marginTop,
         },
         styles,
       ]}>

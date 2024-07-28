@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {colors, spacings} from '../constants';
+import {colors, fontFamilies, fontSizes, spacings} from '../constants';
 
 const globalStyles = StyleSheet.create({
   container: {
@@ -47,6 +47,11 @@ const globalStyles = StyleSheet.create({
     width: spacings.space_15,
     height: spacings.space_15,
     borderRadius: 100,
+  },
+  text: {
+    fontSize: fontSizes.size14,
+    color: colors.dark,
+    fontFamily: fontFamilies.poppinsRegular,
   },
 });
 export default globalStyles;

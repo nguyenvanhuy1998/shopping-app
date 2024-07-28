@@ -14,6 +14,7 @@ interface Props {
   text?: string;
   borderRadius?: number;
   color?: ColorValue;
+  marginTop?: number;
 }
 
 const Button: React.FC<Props> = ({
@@ -25,6 +26,7 @@ const Button: React.FC<Props> = ({
   borderRadius = 100,
   borderWidth = 1,
   borderColor,
+  marginTop,
   color,
 }) => {
   const getBackgroundColor = (): ColorValue =>
@@ -47,6 +49,7 @@ const Button: React.FC<Props> = ({
           borderRadius,
           borderWidth,
           borderColor: getBorderColor(),
+          marginTop,
         },
         stylesContainer,
       ]}
