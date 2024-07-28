@@ -1,19 +1,19 @@
 import Container from './Container';
 import FocusAwareStatusBar from './FocusAwareStatusBar';
-import TextComponent from './TextComponent';
+import Text from './Text';
 import TabBarIcon from './TabBarIcon';
-import ButtonComponent from './ButtonComponent';
+import Button from './Button';
 import Section from './Section';
 import Row from './Row';
-import ImageComponent from './ImageComponent';
+import Image from './Image';
 
 export {
   Container,
   TabBarIcon,
   FocusAwareStatusBar,
-  TextComponent,
-  ButtonComponent,
+  Text,
+  Button,
   Section,
   Row,
-  ImageComponent,
+  Image,
 };

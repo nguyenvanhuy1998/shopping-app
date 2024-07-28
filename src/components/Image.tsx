@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   DimensionValue,
-  Image,
+  Image as ImageCustom,
   ImageResizeMode,
   ImageSourcePropType,
   ImageStyle,
@@ -16,7 +16,7 @@ interface Props {
   resizeMode?: ImageResizeMode;
 }
 
-const ImageComponent = ({
+const Image = ({
   styles,
   width,
   height,
@@ -24,7 +24,7 @@ const ImageComponent = ({
   resizeMode = 'cover',
 }: Props) => {
   return (
-    <Image
+    <ImageCustom
       resizeMode={resizeMode}
       source={source}
       style={[
@@ -38,4 +38,4 @@ const ImageComponent = ({
   );
 };
 
-export default ImageComponent;
+export default Image;

@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {ImageComponent, TextComponent} from '../../../components';
+import {Image, Text} from '../../../components';
 import {colors, fontFamilies, iconSizes, spacings} from '../../../constants';
 import {OnboardingProps} from '../data';
 
@@ -20,18 +20,18 @@ const OnboardingItem = ({item, index}: Props) => {
           width: iconSizes.screen_w,
         },
       ]}>
-      <ImageComponent
+      <Image
         source={item.image}
         width={SlideWidth}
         height={SlideHeight}
         styles={styles.image}
       />
-      <TextComponent
+      <Text
         marginTop={spacings.space_32}
         text={item.title}
         typeText="Heading"
       />
-      <TextComponent
+      <Text
         marginTop={spacings.space_8}
         text={item.desc}
         typeText="SubHeading"

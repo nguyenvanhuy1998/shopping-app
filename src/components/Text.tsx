@@ -1,5 +1,10 @@
 import React from 'react';
-import {ColorValue, StyleProp, Text, TextStyle} from 'react-native';
+import {
+  ColorValue,
+  StyleProp,
+  Text as TextCustom,
+  TextStyle,
+} from 'react-native';
 import {getTextStyle} from '../utils';
 
 type Props = {
@@ -14,7 +19,7 @@ type Props = {
   lineHeight?: number;
 };
 
-const TextComponent: React.FC<Props> = ({
+const Text: React.FC<Props> = ({
   text,
   marginTop,
   styles,
@@ -26,15 +31,15 @@ const TextComponent: React.FC<Props> = ({
   lineHeight,
 }) => {
   return (
-    <Text
+    <TextCustom
       style={[
         {marginTop},
         getTextStyle(typeText, size, color, fontFamily, textAlign, lineHeight),
         styles,
       ]}>
       {text}
-    </Text>
+    </TextCustom>
   );
 };
 
-export default TextComponent;
+export default Text;

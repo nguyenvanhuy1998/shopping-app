@@ -2,7 +2,7 @@ import React from 'react';
 import {ImageBackground, StyleSheet} from 'react-native';
 import {colors, images, spacings} from '../../constants';
 import {globalStyles} from '../../styles';
-import {ButtonComponent, Section} from '../../components';
+import {Button, Section} from '../../components';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {AuthStackParamList} from '../../routers/AuthNavigator';
@@ -27,13 +27,13 @@ const WelcomeScreen = () => {
             paddingBottom: inset.bottom,
           },
         ]}>
-        <ButtonComponent
+        <Button
           onPress={handleLogin}
           text="Login"
           typeButton="outline"
           borderColor={colors.white}
         />
-        <ButtonComponent
+        <Button
           onPress={handleSignUp}
           text="Sign Up"
           borderWidth={2}

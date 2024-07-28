@@ -1,5 +1,5 @@
 import React from 'react';
-import {ImageComponent, Section, TextComponent} from '../../../components';
+import {Image, Section, Text} from '../../../components';
 import {images, spacings} from '../../../constants';
 
 type Props = {
@@ -10,9 +10,9 @@ type Props = {
 const HeaderAuth = ({title, desc}: Props) => {
   return (
     <Section>
-      <ImageComponent source={images.logo} height={84} resizeMode="contain" />
-      <TextComponent text={title} typeText="Heading" size="small" />
-      <TextComponent
+      <Image source={images.logo} height={84} resizeMode="contain" />
+      <Text text={title} typeText="Heading" size="small" />
+      <Text
         text={desc}
         marginTop={spacings.space_8}
         typeText="Body"

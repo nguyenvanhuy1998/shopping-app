@@ -2,7 +2,7 @@ import React from 'react';
 import {ColorValue, StyleProp, TouchableOpacity, ViewStyle} from 'react-native';
 import {colors, spacings} from '../constants';
 import {globalStyles} from '../styles';
-import TextComponent from './TextComponent';
+import Text from './Text';
 
 interface Props {
   stylesContainer?: StyleProp<ViewStyle>;
@@ -16,7 +16,7 @@ interface Props {
   color?: ColorValue;
 }
 
-const ButtonComponent: React.FC<Props> = ({
+const Button: React.FC<Props> = ({
   onPress,
   text,
   stylesContainer,
@@ -51,7 +51,7 @@ const ButtonComponent: React.FC<Props> = ({
         stylesContainer,
       ]}
       onPress={onPress}>
-      <TextComponent
+      <Text
         text={text}
         typeText="SubHeading"
         size="small"
@@ -61,4 +61,4 @@ const ButtonComponent: React.FC<Props> = ({
   );
 };
 
-export default ButtonComponent;
+export default Button;

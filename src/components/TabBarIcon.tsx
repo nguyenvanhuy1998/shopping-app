@@ -5,9 +5,9 @@ import {StyleSheet} from 'react-native';
 import {colors, fontFamilies, spacings} from '../constants';
 import {TabParamList} from '../routers/TabNavigator';
 import {globalStyles} from '../styles';
-import ButtonComponent from './ButtonComponent';
+import Button from './Button';
 import Row from './Row';
-import TextComponent from './TextComponent';
+import Text from './Text';
 
 type Props = {
   focused: boolean;
@@ -18,7 +18,7 @@ type Props = {
 const TabBarIcon = ({focused, size, routeName}: Props) => {
   const renderFocusedIcon = (IconComponent: ElementType, label: string) => (
     <Row styles={[globalStyles.center, styles.focusedContainer]}>
-      <ButtonComponent
+      <Button
         type="round"
         sizeRound="medium30"
         iconRound={
@@ -29,7 +29,7 @@ const TabBarIcon = ({focused, size, routeName}: Props) => {
           />
         }
       />
-      <TextComponent
+      <Text
         text={label}
         color={colors.dark}
         fontFamily={fontFamilies.poppinsSemiBold}

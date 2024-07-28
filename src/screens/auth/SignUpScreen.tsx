@@ -1,11 +1,12 @@
-import {View, Text} from 'react-native';
 import React from 'react';
+import {Container} from '../../components';
+import {HeaderAuth} from './components';
 
 const SignUpScreen = () => {
   return (
-    <View>
-      <Text>SignUpScreen</Text>
-    </View>
+    <Container>
+      <HeaderAuth title="Sign Up" desc="Create an new account" />
+    </Container>
   );
 };
 
