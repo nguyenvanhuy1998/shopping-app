@@ -19,6 +19,9 @@ const globalStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  alignCenter: {
+    alignItems: 'center',
+  },
   jusEnd: {
     justifyContent: 'flex-end',
   },

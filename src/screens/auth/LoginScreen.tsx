@@ -1,15 +1,18 @@
 import React from 'react';
-import {Container, Section} from '../../components';
-import {HeaderAuth, LoginForm} from './components';
-import {FormLoginData} from '../../utils';
+import {Container} from '../../components';
 import {colors} from '../../constants';
+import {FormLoginData} from '../../utils';
+import {HeaderAuth, LoginForm} from './components';
 
 const LoginScreen = () => {
   const initialValues: FormLoginData = {
     email: '',
     password: '',
   };
-  const handleLoginFormSubmit = (formValues: FormLoginData) => {};
+  const handleLoginFormSubmit = (formValues: FormLoginData) => {
+    // Call API Login
+    console.log({formValues});
+  };
   return (
     <Container
       styleContainer={{

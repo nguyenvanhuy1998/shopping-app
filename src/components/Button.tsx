@@ -1,5 +1,11 @@
-import React from 'react';
-import {ColorValue, StyleProp, TouchableOpacity, ViewStyle} from 'react-native';
+import React, {ReactNode} from 'react';
+import {
+  ActivityIndicator,
+  ColorValue,
+  StyleProp,
+  TouchableOpacity,
+  ViewStyle,
+} from 'react-native';
 import {colors, spacings} from '../constants';
 import {globalStyles} from '../styles';
 import Text from './Text';
@@ -15,6 +21,9 @@ interface Props {
   borderRadius?: number;
   color?: ColorValue;
   marginTop?: number;
+  loading?: boolean;
+  disabled?: boolean;
+  prefix?: ReactNode;
 }
 
 const Button: React.FC<Props> = ({
@@ -28,6 +37,9 @@ const Button: React.FC<Props> = ({
   borderColor,
   marginTop,
   color,
+  loading,
+  disabled,
+  prefix,
 }) => {
   const getBackgroundColor = (): ColorValue =>
     backgroundColor ?? (typeButton === 'outline' ? colors.white : colors.dark);
@@ -38,28 +50,36 @@ const Button: React.FC<Props> = ({
   const getColorText = (): ColorValue =>
     color ?? (typeButton === 'outline' ? colors.dark : colors.white);
 
+  const buttonStyles: StyleProp<ViewStyle> = [
+    globalStyles.row,
+    globalStyles.center,
+    {
+      minHeight: spacings.space_50,
+      backgroundColor: disabled ? colors.gray : getBackgroundColor(),
+      borderRadius,
+      borderWidth,
+      borderColor: disabled ? colors.gray : getBorderColor(),
+      marginTop,
+      gap: spacings.space_8,
+    },
+    stylesContainer,
+  ];
+
   return (
     <TouchableOpacity
-      style={[
-        globalStyles.row,
-        globalStyles.center,
-        {
-          minHeight: spacings.space_50,
-          backgroundColor: getBackgroundColor(),
-          borderRadius,
-          borderWidth,
-          borderColor: getBorderColor(),
-          marginTop,
-        },
-        stylesContainer,
-      ]}
+      disabled={disabled}
+      style={buttonStyles}
       onPress={onPress}>
+      {prefix && prefix}
       <Text
         text={text}
         typeText="SubHeading"
         size="small"
-        color={getColorText()}
+        color={disabled ? colors.desc : getColorText()}
       />
+      {loading && (
+        <ActivityIndicator color={disabled ? colors.desc : colors.white} />
+      )}
     </TouchableOpacity>
   );
 };
