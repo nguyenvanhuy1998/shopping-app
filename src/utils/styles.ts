@@ -47,7 +47,8 @@ export const getTextStyle = (
             : size === 'medium'
             ? fontSizes.size14
             : fontSizes.size16,
-        fontFamily: fontFamily ?? fontFamilies.robotoRegular,
+        color: color ?? colors.desc,
+        fontFamily: fontFamily ?? fontFamilies.poppinsRegular,
       };
     default:
       return {

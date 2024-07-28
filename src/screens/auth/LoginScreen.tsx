@@ -1,11 +1,15 @@
-import {View, Text} from 'react-native';
 import React from 'react';
+import {Container} from '../../components';
+import {HeaderAuth} from './components';
 
 const LoginScreen = () => {
   return (
-    <View>
-      <Text>LoginScreen</Text>
-    </View>
+    <Container>
+      <HeaderAuth
+        title="Welcome!"
+        desc="please login or sign up to continue our app"
+      />
+    </Container>
   );
 };
 
