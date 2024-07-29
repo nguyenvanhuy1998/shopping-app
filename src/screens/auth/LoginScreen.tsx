@@ -1,17 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Container} from '../../components';
 import {colors} from '../../constants';
 import {FormLoginData} from '../../utils';
 import {HeaderAuth, LoginForm} from './components';
 
 const LoginScreen = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const initialValues: FormLoginData = {
     email: '',
     password: '',
   };
   const handleLoginFormSubmit = (formValues: FormLoginData) => {
-    // Call API Login
-    console.log({formValues});
+    setIsLoading(true);
+    try {
+    } catch (error) {
+      console.log(error);
+      setIsLoading(false);
+    }
   };
   return (
     <Container
@@ -24,6 +29,7 @@ const LoginScreen = () => {
         desc="please login or sign up to continue our app"
       />
       <LoginForm
+        loading={isLoading}
         initialValues={initialValues}
         onSubmit={handleLoginFormSubmit}
       />

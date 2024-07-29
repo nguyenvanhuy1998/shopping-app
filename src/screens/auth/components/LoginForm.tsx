@@ -12,12 +12,13 @@ import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {AuthStackParamList} from '../../../routers/AuthNavigator';
 
 interface LoginProps {
+  loading?: boolean;
   initialValues?: FormLoginData;
   onSubmit?: (formValues: FormLoginData) => void;
 }
 const loginSchema = schema.pick(['email', 'password']);
 
-const LoginForm = ({initialValues, onSubmit}: LoginProps) => {
+const LoginForm = ({initialValues, onSubmit, loading}: LoginProps) => {
   const navigation = useNavigation<NavigationProp<AuthStackParamList>>();
   const {control, handleSubmit} = useForm<FormLoginData>({
     defaultValues: initialValues,

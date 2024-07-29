@@ -10,11 +10,12 @@ import {AuthStackParamList} from '../../../routers/AuthNavigator';
 import {yupResolver} from '@hookform/resolvers/yup';
 
 interface SignUpProps {
+  loading?: boolean;
   initialValues?: FormSignUpData;
   onSubmit?: (formValues: FormSignUpData) => void;
 }
 
-const SignUpForm = ({initialValues, onSubmit}: SignUpProps) => {
+const SignUpForm = ({initialValues, onSubmit, loading}: SignUpProps) => {
   const navigation = useNavigation<NavigationProp<AuthStackParamList>>();
 
   const {control, handleSubmit} = useForm({
@@ -74,6 +75,8 @@ const SignUpForm = ({initialValues, onSubmit}: SignUpProps) => {
       </Section>
       <Section>
         <Button
+          disabled={loading}
+          loading={loading}
           marginTop={spacings.space_56}
           text="Sign Up"
           onPress={handleSubmit(handleFormSubmit)}
