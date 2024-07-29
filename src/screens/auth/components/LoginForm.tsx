@@ -8,6 +8,8 @@ import {colors, spacings} from '../../../constants';
 import {globalStyles} from '../../../styles';
 import {FormLoginData, schema} from '../../../utils';
 import {Apple, Facebook, Google} from 'iconsax-react-native';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
+import {AuthStackParamList} from '../../../routers/AuthNavigator';
 
 interface LoginProps {
   initialValues?: FormLoginData;
@@ -16,6 +18,7 @@ interface LoginProps {
 const loginSchema = schema.pick(['email', 'password']);
 
 const LoginForm = ({initialValues, onSubmit}: LoginProps) => {
+  const navigation = useNavigation<NavigationProp<AuthStackParamList>>();
   const {control, handleSubmit} = useForm<FormLoginData>({
     defaultValues: initialValues,
     resolver: yupResolver(loginSchema),
@@ -45,6 +48,18 @@ const LoginForm = ({initialValues, onSubmit}: LoginProps) => {
           autoCapitalize="none"
           isPassword
         />
+        <Row>
+          <Button
+            typeButton="link"
+            text="Forgot password?"
+            onPress={() => navigation.navigate('ForgotPassword')}
+          />
+          <Button
+            typeButton="link"
+            text="Sign up"
+            onPress={() => navigation.navigate('SignUpScreen')}
+          />
+        </Row>
       </Section>
       <Section>
         <Button text="Login" onPress={handleSubmit(handleFormSubmit)} />

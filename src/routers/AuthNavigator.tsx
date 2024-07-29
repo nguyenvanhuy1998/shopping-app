@@ -4,6 +4,7 @@ import {
 } from '@react-navigation/native-stack';
 import React from 'react';
 import {
+  ForgotPassword,
   LoginScreen,
   OnboardingScreen,
   SignUpScreen,
@@ -15,6 +16,7 @@ export type AuthStackParamList = {
   WelcomeScreen: undefined;
   OnboardingScreen: undefined;
   SignUpScreen: undefined;
+  ForgotPassword: undefined;
 };
 
 const Stack = createNativeStackNavigator<AuthStackParamList>();
@@ -30,6 +32,7 @@ const AuthNavigator: React.FC = () => {
       <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
+      <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
     </Stack.Navigator>
   );
 };

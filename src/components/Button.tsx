@@ -3,16 +3,17 @@ import {
   ActivityIndicator,
   ColorValue,
   StyleProp,
+  StyleSheet,
   TouchableOpacity,
   ViewStyle,
 } from 'react-native';
-import {colors, spacings} from '../constants';
+import {colors, fontFamilies, spacings} from '../constants';
 import {globalStyles} from '../styles';
 import Text from './Text';
 
 interface Props {
   stylesContainer?: StyleProp<ViewStyle>;
-  typeButton?: 'outline';
+  typeButton?: 'outline' | 'link';
   backgroundColor?: ColorValue;
   borderWidth?: number;
   borderColor?: ColorValue;
@@ -51,16 +52,13 @@ const Button: React.FC<Props> = ({
     color ?? (typeButton === 'outline' ? colors.dark : colors.white);
 
   const buttonStyles: StyleProp<ViewStyle> = [
-    globalStyles.row,
-    globalStyles.center,
+    styles.button,
     {
-      minHeight: spacings.space_50,
       backgroundColor: disabled ? colors.gray : getBackgroundColor(),
       borderRadius,
       borderWidth,
       borderColor: disabled ? colors.gray : getBorderColor(),
       marginTop,
-      gap: spacings.space_8,
     },
     stylesContainer,
   ];
@@ -68,14 +66,22 @@ const Button: React.FC<Props> = ({
   return (
     <TouchableOpacity
       disabled={disabled}
-      style={buttonStyles}
+      style={typeButton === 'link' ? {} : buttonStyles}
       onPress={onPress}>
       {prefix && prefix}
       <Text
         text={text}
-        typeText="SubHeading"
-        size="small"
-        color={disabled ? colors.desc : getColorText()}
+        typeText={typeButton === 'link' ? 'Body' : 'SubHeading'}
+        size={typeButton === 'link' ? 'medium' : 'small'}
+        fontFamily={
+          typeButton === 'link' ? fontFamilies.poppinsSemiBold : undefined
+        }
+        color={
+          disabled
+            ? colors.desc
+            : color ??
+              (typeButton === 'link' ? colors.facebook : getColorText())
+        }
       />
       {loading && (
         <ActivityIndicator color={disabled ? colors.desc : colors.white} />
@@ -85,3 +91,11 @@ const Button: React.FC<Props> = ({
 };
 
 export default Button;
+const styles = StyleSheet.create({
+  button: {
+    minHeight: spacings.space_50,
+    ...globalStyles.row,
+    ...globalStyles.center,
+    gap: spacings.space_8,
+  },
+});

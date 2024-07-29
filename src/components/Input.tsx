@@ -102,5 +102,6 @@ const styles = StyleSheet.create({
     marginRight: spacings.space_8,
     flex: 1,
     height: '100%',
+    paddingVertical: 0,
   },
 });

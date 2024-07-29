@@ -8,6 +8,7 @@ enum Color {
   Dangerous = '#ff0505',
   White = '#FFFFFF',
   Facebook = '#3b5998',
+  Link = '#FF0000',
 }
 const colors = {
   dark: Color.Dark,
@@ -19,5 +20,6 @@ const colors = {
   dangerous: Color.Dangerous,
   white: Color.White,
   facebook: Color.Facebook,
+  link: Color.Link,
 };
 export default colors;
