@@ -7,12 +7,25 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:813836860837:android:6dbda5c64fbbcf12bcbc4c",
+        "mobilesdk_app_id": "1:813836860837:android:abae2673588c780abcbc4c",
         "android_client_info": {
-          "package_name": "com.shoppingapp"
+          "package_name": "com.gemini.sharaapp"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "813836860837-pei63f9bn2sm4k35maachdqub6tu4ml3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gemini.sharaapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "813836860837-mo7d5uftcnk90qapiv5tpev7tb40da16.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyC4mketPaJ9mrtH90bs42_1ij7uqZw4hx8"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "813836860837-mo7d5uftcnk90qapiv5tpev7tb40da16.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

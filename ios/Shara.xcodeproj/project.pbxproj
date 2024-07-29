@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* ShoppingAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ShoppingAppTests.m */; };
+		00E356F31AD99517003FC87E /* SharaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SharaTests.m */; };
 		02776FCFA302477EA1CD7C24 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 738F1E590C9B49ED9A2FEF4C /* MaterialCommunityIcons.ttf */; };
-		0C80B921A6F3F58F76C31292 /* libPods-ShoppingApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-ShoppingApp.a */; };
+		0C80B921A6F3F58F76C31292 /* libPods-Shara.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-Shara.a */; };
 		11A8EF242FB74B17AEAF9914 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71A65237DBD34F4EA5EB0BED /* Poppins-Regular.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -28,7 +28,7 @@
 		6A637B4D69E049808EC47863 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2023CDF1112454B99A17DDF /* Poppins-Bold.ttf */; };
 		6ADBF6ECE59E44EC8D21D513 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1600ED3300F64D249380B8D8 /* Poppins-Light.ttf */; };
 		71F8066D912F4D0698E65DCB /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FEF2194FD844DE79549A4FB /* Roboto-Medium.ttf */; };
-		7699B88040F8A987B510C191 /* libPods-ShoppingApp-ShoppingAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-ShoppingApp-ShoppingAppTests.a */; };
+		7699B88040F8A987B510C191 /* libPods-Shara-SharaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Shara-SharaTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		96BC606E87134CE889906258 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 274376AA251F4F27B3AB1F01 /* Poppins-SemiBold.ttf */; };
 		9F02A5FEB3194D759C3596BA /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D53ED2E25E0848039DEEC91C /* Fontisto.ttf */; };
@@ -51,45 +51,45 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = ShoppingApp;
+			remoteInfo = "Shara";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* ShoppingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* SharaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SharaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* ShoppingAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShoppingAppTests.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* SharaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SharaTests.m"; sourceTree = "<group>"; };
 		03A0DBE319B648FC8D674AF3 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = ../assets/fonts/FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
-		0BAAF1DD17B10B79C469E6A9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = ShoppingApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* ShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ShoppingApp/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = ShoppingApp/AppDelegate.mm; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ShoppingApp/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ShoppingApp/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ShoppingApp/main.m; sourceTree = "<group>"; };
-		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = ShoppingApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		0BAAF1DD17B10B79C469E6A9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = Shara/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* Shara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shara.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "Shara/AppDelegate.h"; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = "Shara/AppDelegate.mm"; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Shara/Images.xcassets"; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Shara/Info.plist"; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Shara/main.m"; sourceTree = "<group>"; };
+		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = Shara/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		1600ED3300F64D249380B8D8 /* Poppins-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Light.ttf"; path = "../assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-ShoppingApp-ShoppingAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShoppingApp-ShoppingAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		19F6CBCC0A4E27FBF8BF4A61 /* libPods-Shara-SharaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Shara-SharaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FEF2194FD844DE79549A4FB /* Roboto-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Medium.ttf"; path = "../assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		274376AA251F4F27B3AB1F01 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
-		3B4392A12AC88292D35C810B /* Pods-ShoppingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingApp.debug.xcconfig"; path = "Target Support Files/Pods-ShoppingApp/Pods-ShoppingApp.debug.xcconfig"; sourceTree = "<group>"; };
+		3B4392A12AC88292D35C810B /* Pods-Shara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shara.debug.xcconfig"; path = "Target Support Files/Pods-Shara/Pods-Shara.debug.xcconfig"; sourceTree = "<group>"; };
 		3DC8B25E185D4AB4847CABCE /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = ../assets/fonts/FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
 		4559A92EAFDA4990A4D21287 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = ../assets/fonts/MaterialIcons.ttf; sourceTree = "<group>"; };
 		5290615A36E84599837BE42A /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = ../assets/fonts/Zocial.ttf; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-ShoppingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingApp.release.xcconfig"; path = "Target Support Files/Pods-ShoppingApp/Pods-ShoppingApp.release.xcconfig"; sourceTree = "<group>"; };
+		5709B34CF0A7D63546082F79 /* Pods-Shara.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shara.release.xcconfig"; path = "Target Support Files/Pods-Shara/Pods-Shara.release.xcconfig"; sourceTree = "<group>"; };
 		57D83ADAFEAD4943939C297B /* FontAwesome6_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome6_Regular.ttf; path = ../assets/fonts/FontAwesome6_Regular.ttf; sourceTree = "<group>"; };
 		59CC46CAA4ED49A192A3F15A /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = ../assets/fonts/FontAwesome.ttf; sourceTree = "<group>"; };
-		5B7EB9410499542E8C5724F5 /* Pods-ShoppingApp-ShoppingAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingApp-ShoppingAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ShoppingApp-ShoppingAppTests/Pods-ShoppingApp-ShoppingAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5B7EB9410499542E8C5724F5 /* Pods-Shara-SharaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shara-SharaTests.debug.xcconfig"; path = "Target Support Files/Pods-Shara-SharaTests/Pods-Shara-SharaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5C5F397ED6FA4715A11E6AC6 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = ../assets/fonts/EvilIcons.ttf; sourceTree = "<group>"; };
 		5D087D84A0B44802B23E38F8 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-ShoppingApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShoppingApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DCACB8F33CDC322A6C60F78 /* libPods-Shara.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Shara.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63F0638A0710495893CEB5A3 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = ../assets/fonts/SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		64194DB7B5CB49B1BA845A73 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		71A65237DBD34F4EA5EB0BED /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		7219A5AA5EF14686B3AAFC27 /* FontAwesome6_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome6_Brands.ttf; path = ../assets/fonts/FontAwesome6_Brands.ttf; sourceTree = "<group>"; };
 		738F1E590C9B49ED9A2FEF4C /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = ../assets/fonts/MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ShoppingApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		89C6BE57DB24E9ADA2F236DE /* Pods-ShoppingApp-ShoppingAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingApp-ShoppingAppTests.release.xcconfig"; path = "Target Support Files/Pods-ShoppingApp-ShoppingAppTests/Pods-ShoppingApp-ShoppingAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "Shara/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		89C6BE57DB24E9ADA2F236DE /* Pods-Shara-SharaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shara-SharaTests.release.xcconfig"; path = "Target Support Files/Pods-Shara-SharaTests/Pods-Shara-SharaTests.release.xcconfig"; sourceTree = "<group>"; };
 		89FBCB1981C446EDAC567CDB /* Roboto-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Light.ttf"; path = "../assets/fonts/Roboto-Light.ttf"; sourceTree = "<group>"; };
 		9BEB45A9DE654AE29D1D7E1E /* Roboto-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Bold.ttf"; path = "../assets/fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		9BF7B6AB8B7C42D792C0C075 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = ../assets/fonts/Entypo.ttf; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-ShoppingApp-ShoppingAppTests.a in Frameworks */,
+				7699B88040F8A987B510C191 /* libPods-Shara-SharaTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,20 +118,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-ShoppingApp.a in Frameworks */,
+				0C80B921A6F3F58F76C31292 /* libPods-Shara.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* ShoppingAppTests */ = {
+		00E356EF1AD99517003FC87E /* SharaTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* ShoppingAppTests.m */,
+				00E356F21AD99517003FC87E /* SharaTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = ShoppingAppTests;
+			path = "SharaTests";
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -142,7 +142,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* ShoppingApp */ = {
+		13B07FAE1A68108700A75B9A /* Shara */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -154,7 +154,7 @@
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
 				0BAAF1DD17B10B79C469E6A9 /* PrivacyInfo.xcprivacy */,
 			);
-			name = ShoppingApp;
+			name = "Shara";
 			sourceTree = "<group>";
 		};
 		29784A3A339145E68FDC1FE4 /* Resources */ = {
@@ -196,8 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-ShoppingApp.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-ShoppingApp-ShoppingAppTests.a */,
+				5DCACB8F33CDC322A6C60F78 /* libPods-Shara.a */,
+				19F6CBCC0A4E27FBF8BF4A61 /* libPods-Shara-SharaTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,9 +212,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* ShoppingApp */,
+				13B07FAE1A68108700A75B9A /* Shara */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* ShoppingAppTests */,
+				00E356EF1AD99517003FC87E /* SharaTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
@@ -228,8 +228,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* ShoppingApp.app */,
-				00E356EE1AD99517003FC87E /* ShoppingAppTests.xctest */,
+				13B07F961A680F5B00A75B9A /* Shara.app */,
+				00E356EE1AD99517003FC87E /* SharaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -237,10 +237,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-ShoppingApp.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-ShoppingApp.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-ShoppingApp-ShoppingAppTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-ShoppingApp-ShoppingAppTests.release.xcconfig */,
+				3B4392A12AC88292D35C810B /* Pods-Shara.debug.xcconfig */,
+				5709B34CF0A7D63546082F79 /* Pods-Shara.release.xcconfig */,
+				5B7EB9410499542E8C5724F5 /* Pods-Shara-SharaTests.debug.xcconfig */,
+				89C6BE57DB24E9ADA2F236DE /* Pods-Shara-SharaTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -248,9 +248,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* ShoppingAppTests */ = {
+		00E356ED1AD99517003FC87E /* SharaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ShoppingAppTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SharaTests" */;
 			buildPhases = (
 				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -264,14 +264,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = ShoppingAppTests;
-			productName = ShoppingAppTests;
-			productReference = 00E356EE1AD99517003FC87E /* ShoppingAppTests.xctest */;
+			name = "SharaTests";
+			productname = "SharaTests";
+			productReference = 00E356EE1AD99517003FC87E /* SharaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* ShoppingApp */ = {
+		13B07F861A680F5B00A75B9A /* Shara */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ShoppingApp" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Shara" */;
 			buildPhases = (
 				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
@@ -285,9 +285,9 @@
 			);
 			dependencies = (
 			);
-			name = ShoppingApp;
-			productName = ShoppingApp;
-			productReference = 13B07F961A680F5B00A75B9A /* ShoppingApp.app */;
+			name = "Shara";
+			productName = "Shara";
+			productReference = 13B07F961A680F5B00A75B9A /* Shara.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -307,7 +307,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ShoppingApp" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Shara" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -320,8 +320,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* ShoppingApp */,
-				00E356ED1AD99517003FC87E /* ShoppingAppTests */,
+				13B07F861A680F5B00A75B9A /* Shara */,
+				00E356ED1AD99517003FC87E /* SharaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -397,15 +397,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ShoppingApp/Pods-ShoppingApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Shara/Pods-Shara-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ShoppingApp/Pods-ShoppingApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Shara/Pods-Shara-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShoppingApp/Pods-ShoppingApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Shara/Pods-Shara-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
@@ -423,7 +423,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ShoppingApp-ShoppingAppTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Shara-SharaTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -445,7 +445,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ShoppingApp-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Shara-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -458,15 +458,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ShoppingApp-ShoppingAppTests/Pods-ShoppingApp-ShoppingAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Shara-SharaTests/Pods-Shara-SharaTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ShoppingApp-ShoppingAppTests/Pods-ShoppingApp-ShoppingAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Shara-SharaTests/Pods-Shara-SharaTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShoppingApp-ShoppingAppTests/Pods-ShoppingApp-ShoppingAppTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Shara-SharaTests/Pods-Shara-SharaTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
@@ -475,15 +475,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ShoppingApp/Pods-ShoppingApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Shara/Pods-Shara-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ShoppingApp/Pods-ShoppingApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Shara/Pods-Shara-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShoppingApp/Pods-ShoppingApp-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Shara/Pods-Shara-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
@@ -492,15 +492,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ShoppingApp-ShoppingAppTests/Pods-ShoppingApp-ShoppingAppTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Shara-SharaTests/Pods-Shara-SharaTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ShoppingApp-ShoppingAppTests/Pods-ShoppingApp-ShoppingAppTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Shara-SharaTests/Pods-Shara-SharaTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShoppingApp-ShoppingAppTests/Pods-ShoppingApp-ShoppingAppTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Shara-SharaTests/Pods-Shara-SharaTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -510,7 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* ShoppingAppTests.m in Sources */,
+				00E356F31AD99517003FC87E /* SharaTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,7 +528,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* ShoppingApp */;
+			target = 13B07F861A680F5B00A75B9A /* Shara */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -536,14 +536,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-ShoppingApp-ShoppingAppTests.debug.xcconfig */;
+			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-Shara-SharaTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = ShoppingAppTests/Info.plist;
+				INFOPLIST_FILE = "SharaTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -555,19 +555,19 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gemini.sharaapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShoppingApp.app/ShoppingApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shara.app/Shara";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-ShoppingApp-ShoppingAppTests.release.xcconfig */;
+			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-Shara-SharaTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = ShoppingAppTests/Info.plist;
+				INFOPLIST_FILE = "SharaTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -579,21 +579,22 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gemini.sharaapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShoppingApp.app/ShoppingApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shara.app/Shara";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-ShoppingApp.debug.xcconfig */;
+			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-Shara.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = ShoppingApp/Info.plist;
+				INFOPLIST_FILE = "Shara/Info.plist";
+             INFOPLIST_KEY_CFBundleDisplayName = "Shara";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -604,8 +605,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = ShoppingApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gemini.sharaapp";
+				PRODUCT_NAME = "Shara";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -614,12 +615,13 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-ShoppingApp.release.xcconfig */;
+			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-Shara.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = ShoppingApp/Info.plist;
+				INFOPLIST_FILE = "Shara/Info.plist";
+             INFOPLIST_KEY_CFBundleDisplayName = "Shara";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -630,8 +632,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = ShoppingApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gemini.sharaapp";
+				PRODUCT_NAME = "Shara";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -799,7 +801,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ShoppingAppTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SharaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -808,7 +810,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ShoppingApp" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Shara" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -817,7 +819,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ShoppingApp" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Shara" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
