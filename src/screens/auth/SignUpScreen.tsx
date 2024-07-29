@@ -2,6 +2,7 @@ import React from 'react';
 import {Container} from '../../components';
 import {HeaderAuth, SignUpForm} from './components';
 import {FormSignUpData} from '../../utils';
+import {colors} from '../../constants';
 
 const SignUpScreen = () => {
   const initialValues: FormSignUpData = {
@@ -9,10 +10,17 @@ const SignUpScreen = () => {
     email: '',
     password: '',
     confirmPassword: '',
+    termAndCondition: false,
   };
-  const handleSignUpFormSubmit = (formValues: FormSignUpData) => {};
+  const handleSignUpFormSubmit = (formValues: FormSignUpData) => {
+    console.log({formValues});
+  };
   return (
-    <Container>
+    <Container
+      isScrollView={false}
+      styleContainer={{
+        backgroundColor: colors.white,
+      }}>
       <HeaderAuth title="Sign Up" desc="Create an new account" />
       <SignUpForm
         initialValues={initialValues}

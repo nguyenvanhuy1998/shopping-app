@@ -17,6 +17,7 @@ type Props = {
   fontFamily?: string;
   textAlign?: 'left' | 'right' | 'justify' | 'auto';
   lineHeight?: number;
+  flex?: number;
   textDecorationLine?:
     | 'none'
     | 'underline'
@@ -33,13 +34,14 @@ const Text: React.FC<Props> = ({
   color,
   fontFamily,
   textAlign = 'left',
+  flex,
   lineHeight,
   textDecorationLine,
 }) => {
   return (
     <TextCustom
       style={[
-        {marginTop, textDecorationLine},
+        {marginTop, textDecorationLine, flex},
         getTextStyle(typeText, size, color, fontFamily, textAlign, lineHeight),
         styles,
       ]}>

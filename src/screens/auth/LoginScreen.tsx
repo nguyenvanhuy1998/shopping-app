@@ -15,6 +15,7 @@ const LoginScreen = () => {
   };
   return (
     <Container
+      isScrollView={false}
       styleContainer={{
         backgroundColor: colors.white,
       }}>

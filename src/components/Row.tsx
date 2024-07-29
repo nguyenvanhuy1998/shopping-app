@@ -26,6 +26,7 @@ type Props = {
   styles?: StyleProp<ViewStyle>;
   flex?: number;
   marginTop?: number;
+  gap?: number;
 };
 
 const Row = ({
@@ -37,6 +38,7 @@ const Row = ({
   alignItems = 'center',
   flex = 0,
   flexWrap = 'wrap',
+  gap,
   marginTop,
 }: Props) => {
   if (onPress) {
@@ -51,6 +53,7 @@ const Row = ({
             flex,
             flexWrap,
             marginTop,
+            gap,
           },
           styles,
         ]}
@@ -70,6 +73,7 @@ const Row = ({
           flex,
           flexWrap,
           marginTop,
+          gap,
         },
         styles,
       ]}>

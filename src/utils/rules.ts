@@ -22,6 +22,9 @@ export const schema = yup.object({
     .min(6, 'Length from 6-160 characters')
     .max(160, 'Length from 6-160 characters')
     .oneOf([yup.ref('password')], 'Password does not match'),
+  termAndCondition: yup
+    .boolean()
+    .oneOf([true], 'You must accept the term and condition'),
 });
 export type FormSignUpData = yup.InferType<typeof schema>;
 export type FormLoginData = Pick<FormSignUpData, 'email' | 'password'>;

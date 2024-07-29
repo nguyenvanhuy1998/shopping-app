@@ -2,9 +2,9 @@
 import {yupResolver} from '@hookform/resolvers/yup';
 import React from 'react';
 import {useForm} from 'react-hook-form';
-import {StyleSheet, View} from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
 import {Button, Input, Row, Section, Text} from '../../../components';
-import {colors, spacings} from '../../../constants';
+import {colors, fontSizes, spacings} from '../../../constants';
 import {globalStyles} from '../../../styles';
 import {FormLoginData, schema} from '../../../utils';
 import {Apple, Facebook, Google} from 'iconsax-react-native';
@@ -28,7 +28,11 @@ const LoginForm = ({initialValues, onSubmit}: LoginProps) => {
     onSubmit?.(formValues);
   };
   return (
-    <>
+    <ScrollView
+      keyboardShouldPersistTaps="handled"
+      alwaysBounceVertical={false}
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={globalStyles.contentScrollContainer}>
       <Section styles={globalStyles.container} marginTop={spacings.space_24}>
         <Input
           name="email"
@@ -48,21 +52,27 @@ const LoginForm = ({initialValues, onSubmit}: LoginProps) => {
           autoCapitalize="none"
           isPassword
         />
-        <Row>
+        <Row justifyContent="flex-end">
           <Button
             typeButton="link"
             text="Forgot password?"
             onPress={() => navigation.navigate('ForgotPassword')}
           />
-          <Button
-            typeButton="link"
-            text="Sign up"
-            onPress={() => navigation.navigate('SignUpScreen')}
-          />
         </Row>
       </Section>
       <Section>
         <Button text="Login" onPress={handleSubmit(handleFormSubmit)} />
+        <Row
+          styles={{gap: spacings.space_4}}
+          marginTop={spacings.space_12}
+          justifyContent="center">
+          <Text text="You have not account?" typeText="Body" size="medium" />
+          <Button
+            typeButton="link"
+            text="Sign Up"
+            onPress={() => navigation.navigate('SignUpScreen')}
+          />
+        </Row>
         <Row
           marginTop={spacings.space_12}
           styles={[
@@ -77,6 +87,7 @@ const LoginForm = ({initialValues, onSubmit}: LoginProps) => {
         </Row>
         <Button
           marginTop={spacings.space_12}
+          borderColor={colors.facebook}
           backgroundColor={colors.facebook}
           text="Continue with Facebook"
           prefix={<Facebook variant="Bold" color={colors.white} />}
@@ -98,7 +109,7 @@ const LoginForm = ({initialValues, onSubmit}: LoginProps) => {
           color={colors.desc}
         />
       </Section>
-    </>
+    </ScrollView>
   );
 };
 

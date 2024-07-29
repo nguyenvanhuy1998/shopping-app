@@ -20,6 +20,7 @@ interface Props {
   onPress?: () => void;
   text?: string;
   borderRadius?: number;
+  size?: 'small' | 'medium' | 'large';
   color?: ColorValue;
   marginTop?: number;
   loading?: boolean;
@@ -37,6 +38,7 @@ const Button: React.FC<Props> = ({
   borderWidth = 1,
   borderColor,
   marginTop,
+  size,
   color,
   loading,
   disabled,
@@ -72,7 +74,7 @@ const Button: React.FC<Props> = ({
       <Text
         text={text}
         typeText={typeButton === 'link' ? 'Body' : 'SubHeading'}
-        size={typeButton === 'link' ? 'medium' : 'small'}
+        size={size ? size : typeButton === 'link' ? 'medium' : 'small'}
         fontFamily={
           typeButton === 'link' ? fontFamilies.poppinsSemiBold : undefined
         }

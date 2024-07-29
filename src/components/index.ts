@@ -7,6 +7,7 @@ import Section from './Section';
 import Row from './Row';
 import Image from './Image';
 import Input from './Input';
+import CheckBox from './CheckBox';
 
 export {
   Container,
@@ -18,4 +19,5 @@ export {
   Row,
   Image,
   Input,
+  CheckBox,
 };
