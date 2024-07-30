@@ -1,8 +1,4 @@
-import {useMutation} from '@tanstack/react-query';
-import {pick} from 'lodash';
 import React from 'react';
-import Toast from 'react-native-toast-message';
-import authApi from '../../api/authApi';
 import {Container} from '../../components';
 import {colors} from '../../constants';
 import {
@@ -11,42 +7,41 @@ import {
   isFirebaseError,
 } from '../../utils';
 import {HeaderAuth, SignUpForm} from './components';
+import {useMutation} from '@tanstack/react-query';
+import authServices from '../../services/authServices';
+import Toast from 'react-native-toast-message';
 
 const SignUpScreen = () => {
   const initialValues: FormSignUpData = {
+    username: '',
     email: '',
     password: '',
     confirmPassword: '',
     termAndCondition: false,
   };
+
   const signUpMutation = useMutation({
     mutationFn: (body: Pick<FormSignUpData, 'email' | 'password'>) =>
-      authApi.signUp(body),
+      authServices.signUpWithEmailAndPassword(body.email, body.password),
+    onSuccess: res => {
+      console.log({res});
+      Toast.show({
+        type: 'success',
+        text1: 'Account created successfully!',
+      });
+    },
+    onError: error => {
+      const errorMessage = isFirebaseError(error)
+        ? getFirebaseErrorMessage(error)
+        : 'An unexpected error occurred';
+      Toast.show({
+        type: 'error',
+        text1: errorMessage,
+      });
+    },
   });
-
   const handleSignUpFormSubmit = (formValues: FormSignUpData) => {
-    const body = pick(formValues, ['email', 'password']);
-    signUpMutation.mutate(body, {
-      onSuccess: res => {
-        console.log({res});
-      },
-      onError: error => {
-        if (isFirebaseError(error)) {
-          const errorMessage = getFirebaseErrorMessage(error);
-          Toast.show({
-            type: 'error',
-            text1: 'Error',
-            text2: errorMessage,
-          });
-        } else {
-          Toast.show({
-            type: 'error',
-            text1: 'Error',
-            text2: 'An unknown error occurred. Please try again.',
-          });
-        }
-      },
-    });
+    signUpMutation.mutate(formValues);
   };
   return (
     <Container

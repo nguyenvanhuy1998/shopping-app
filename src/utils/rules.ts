@@ -1,10 +1,10 @@
 import * as yup from 'yup';
 export const schema = yup.object({
-  // username: yup
-  //   .string()
-  //   .required('Username is required')
-  //   .min(5, 'Length from 5-160 characters')
-  //   .max(160, 'Length from 5-160 characters'),
+  username: yup
+    .string()
+    .required('Username is required')
+    .min(5, 'Length from 5-160 characters')
+    .max(160, 'Length from 5-160 characters'),
   email: yup
     .string()
     .required('Email is required')
