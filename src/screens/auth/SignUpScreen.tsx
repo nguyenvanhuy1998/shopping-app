@@ -1,35 +1,52 @@
-import React, {useState} from 'react';
+import {useMutation} from '@tanstack/react-query';
+import {pick} from 'lodash';
+import React from 'react';
+import Toast from 'react-native-toast-message';
+import authApi from '../../api/authApi';
 import {Container} from '../../components';
-import {HeaderAuth, SignUpForm} from './components';
-import {FormSignUpData} from '../../utils';
 import {colors} from '../../constants';
-import auth from '@react-native-firebase/auth';
+import {
+  FormSignUpData,
+  getFirebaseErrorMessage,
+  isFirebaseError,
+} from '../../utils';
+import {HeaderAuth, SignUpForm} from './components';
 
 const SignUpScreen = () => {
-  const [isLoading, setIsLoading] = useState(false);
-
   const initialValues: FormSignUpData = {
     email: '',
     password: '',
     confirmPassword: '',
     termAndCondition: false,
   };
-  const handleSignUpFormSubmit = async (formValues: FormSignUpData) => {
-    setIsLoading(true);
-    try {
-      const response = await auth().createUserWithEmailAndPassword(
-        formValues.email,
-        formValues.password,
-      );
-      const user = response.user;
-      if (user) {
-        console.log({user});
-      }
-      setIsLoading(false);
-    } catch (error) {
-      setIsLoading(false);
-      console.log('Sign up failed', error);
-    }
+  const signUpMutation = useMutation({
+    mutationFn: (body: Pick<FormSignUpData, 'email' | 'password'>) =>
+      authApi.signUp(body),
+  });
+
+  const handleSignUpFormSubmit = (formValues: FormSignUpData) => {
+    const body = pick(formValues, ['email', 'password']);
+    signUpMutation.mutate(body, {
+      onSuccess: res => {
+        console.log({res});
+      },
+      onError: error => {
+        if (isFirebaseError(error)) {
+          const errorMessage = getFirebaseErrorMessage(error);
+          Toast.show({
+            type: 'error',
+            text1: 'Error',
+            text2: errorMessage,
+          });
+        } else {
+          Toast.show({
+            type: 'error',
+            text1: 'Error',
+            text2: 'An unknown error occurred. Please try again.',
+          });
+        }
+      },
+    });
   };
   return (
     <Container
@@ -39,7 +56,7 @@ const SignUpScreen = () => {
       }}>
       <HeaderAuth title="Sign Up" desc="Create an new account" />
       <SignUpForm
-        loading={isLoading}
+        loading={signUpMutation.isPending}
         initialValues={initialValues}
         onSubmit={handleSignUpFormSubmit}
       />
