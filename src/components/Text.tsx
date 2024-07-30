@@ -15,7 +15,7 @@ type Props = {
   size?: 'small' | 'medium' | 'large';
   color?: ColorValue;
   fontFamily?: string;
-  textAlign?: 'left' | 'right' | 'justify' | 'auto';
+  textAlign?: 'left' | 'right' | 'justify' | 'auto' | 'center';
   lineHeight?: number;
   flex?: number;
   textDecorationLine?:

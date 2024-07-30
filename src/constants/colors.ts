@@ -9,6 +9,7 @@ enum Color {
   White = '#FFFFFF',
   Facebook = '#3b5998',
   Link = '#FF0000',
+  Success = '#a6d96a',
 }
 const colors = {
   dark: Color.Dark,
@@ -21,5 +22,6 @@ const colors = {
   white: Color.White,
   facebook: Color.Facebook,
   link: Color.Link,
+  success: Color.Success,
 };
 export default colors;

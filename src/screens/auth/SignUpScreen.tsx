@@ -10,8 +10,11 @@ import {HeaderAuth, SignUpForm} from './components';
 import {useMutation} from '@tanstack/react-query';
 import authServices from '../../services/authServices';
 import Toast from 'react-native-toast-message';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
+import {AuthStackParamList} from '../../routers/AuthNavigator';
 
 const SignUpScreen = () => {
+  const navigation = useNavigation<NavigationProp<AuthStackParamList>>();
   const initialValues: FormSignUpData = {
     username: '',
     email: '',
@@ -21,15 +24,9 @@ const SignUpScreen = () => {
   };
 
   const signUpMutation = useMutation({
-    mutationFn: (body: Pick<FormSignUpData, 'email' | 'password'>) =>
-      authServices.signUpWithEmailAndPassword(body.email, body.password),
-    onSuccess: res => {
-      console.log({res});
-      Toast.show({
-        type: 'success',
-        text1: 'Account created successfully!',
-      });
-    },
+    mutationFn: (body: FormSignUpData) =>
+      authServices.signUpWithEmailAndPassword(body),
+    onSuccess: () => navigation.navigate('AuthSuccess'),
     onError: error => {
       const errorMessage = isFirebaseError(error)
         ? getFirebaseErrorMessage(error)

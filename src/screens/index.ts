@@ -7,6 +7,7 @@ import WelcomeScreen from './auth/WelcomeScreen';
 import OnboardingScreen from './auth/OnboardingScreen';
 import SignUpScreen from './auth/SignUpScreen';
 import ForgotPassword from './auth/ForgotPassword';
+import AuthSuccess from './auth/AuthSuccess';
 
 export {
   HomeScreen,
@@ -18,4 +19,5 @@ export {
   OnboardingScreen,
   SignUpScreen,
   ForgotPassword,
+  AuthSuccess,
 };
