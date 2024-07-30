@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>154345584848-oni5qb8egfpi8fp8e9kbb9sgqh7k856k.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.154345584848-oni5qb8egfpi8fp8e9kbb9sgqh7k856k</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>154345584848-arqaqdd12a1ng6q5br67ml6bgq7do0sc.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDm50yShC3yyaqxW1oJqbztGH4DPFJcO3w</string>
+	<key>GCM_SENDER_ID</key>
+	<string>154345584848</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>vn.mafc.card-uat</string>
+	<key>PROJECT_ID</key>
+	<string>mirae-asset-card-uat</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mirae-asset-card-uat.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:154345584848:ios:80117603829f9048b886d5</string>
+</dict>
+</plist>
