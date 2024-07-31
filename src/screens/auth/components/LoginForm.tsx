@@ -62,7 +62,12 @@ const LoginForm = ({initialValues, onSubmit, loading}: LoginProps) => {
         </Row>
       </Section>
       <Section>
-        <Button text="Login" onPress={handleSubmit(handleFormSubmit)} />
+        <Button
+          disabled={loading}
+          loading={loading}
+          text="Login"
+          onPress={handleSubmit(handleFormSubmit)}
+        />
         <Row
           styles={{gap: spacings.space_4}}
           marginTop={spacings.space_12}

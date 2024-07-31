@@ -1,22 +1,31 @@
-import React, {useState} from 'react';
+import {useMutation} from '@tanstack/react-query';
+import React from 'react';
+import {useAppDispatch} from '../../app';
 import {Container} from '../../components';
 import {colors} from '../../constants';
-import {FormLoginData} from '../../utils';
+import {authServices} from '../../services';
+import {FormLoginData, setUserToLS} from '../../utils';
+import {authActions} from './authSlice';
 import {HeaderAuth, LoginForm} from './components';
+import {User} from '../../models';
 
 const LoginScreen = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useAppDispatch();
+
   const initialValues: FormLoginData = {
     email: '',
     password: '',
   };
+  const signInMutation = useMutation({
+    mutationFn: (body: FormLoginData) =>
+      authServices.signInWithEmailAndPassword(body),
+    onSuccess: currentUser => {
+      dispatch(authActions.setUser(currentUser as User));
+      setUserToLS(currentUser as User);
+    },
+  });
   const handleLoginFormSubmit = (formValues: FormLoginData) => {
-    setIsLoading(true);
-    try {
-    } catch (error) {
-      console.log(error);
-      setIsLoading(false);
-    }
+    signInMutation.mutate(formValues);
   };
   return (
     <Container
@@ -29,7 +38,7 @@ const LoginScreen = () => {
         desc="please login or sign up to continue our app"
       />
       <LoginForm
-        loading={isLoading}
+        loading={signInMutation.isPending}
         initialValues={initialValues}
         onSubmit={handleLoginFormSubmit}
       />

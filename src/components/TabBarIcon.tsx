@@ -19,8 +19,8 @@ const TabBarIcon = ({focused, size, routeName}: Props) => {
   const renderFocusedIcon = (IconComponent: ElementType, label: string) => (
     <Row styles={[globalStyles.center, styles.focusedContainer]}>
       <Button
-        type="round"
-        sizeRound="medium30"
+        typeButton="round"
+        size="medium"
         iconRound={
           <IconComponent
             variant="Bold"

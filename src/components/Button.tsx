@@ -1,74 +1,87 @@
-import React, {ReactNode} from 'react';
+import React from 'react';
 import {
-  ActivityIndicator,
-  ColorValue,
-  StyleProp,
-  StyleSheet,
   TouchableOpacity,
+  ActivityIndicator,
   ViewStyle,
+  StyleProp,
+  ColorValue,
 } from 'react-native';
-import {colors, fontFamilies, spacings} from '../constants';
-import {globalStyles} from '../styles';
+import {colors, fontFamilies} from '../constants';
 import Text from './Text';
+import {getButtonRoundStyles, getButtonStyles, getColorText} from '../utils';
 
 interface Props {
-  stylesContainer?: StyleProp<ViewStyle>;
-  typeButton?: 'outline' | 'link';
-  backgroundColor?: ColorValue;
-  borderWidth?: number;
-  borderColor?: ColorValue;
   onPress?: () => void;
-  text?: string;
-  borderRadius?: number;
-  size?: 'small' | 'medium' | 'large';
-  color?: ColorValue;
-  marginTop?: number;
-  loading?: boolean;
+  typeButton?: 'link' | 'outline' | 'round';
   disabled?: boolean;
-  prefix?: ReactNode;
+  backgroundColor?: ColorValue;
+  borderColor?: ColorValue;
+  color?: ColorValue;
+  borderRadius?: number;
+  borderWidth?: number;
+  marginTop?: number;
+  stylesContainer?: StyleProp<ViewStyle>;
+  size?: 'small' | 'medium' | 'large';
+  iconRound?: React.ReactNode;
+  prefix?: React.ReactNode;
+  text?: string;
+  loading?: boolean;
 }
-
-const Button: React.FC<Props> = ({
+const Button = ({
   onPress,
-  text,
-  stylesContainer,
   typeButton,
+  disabled,
   backgroundColor,
+  borderColor,
+  color,
   borderRadius = 100,
   borderWidth = 1,
-  borderColor,
   marginTop,
+  stylesContainer,
   size,
-  color,
-  loading,
-  disabled,
+  iconRound,
   prefix,
-}) => {
-  const getBackgroundColor = (): ColorValue =>
-    backgroundColor ?? (typeButton === 'outline' ? colors.white : colors.dark);
-
-  const getBorderColor = (): ColorValue =>
-    borderColor ?? (typeButton === 'outline' ? colors.gray2 : colors.dark);
-
-  const getColorText = (): ColorValue =>
-    color ?? (typeButton === 'outline' ? colors.dark : colors.white);
-
-  const buttonStyles: StyleProp<ViewStyle> = [
-    styles.button,
-    {
-      backgroundColor: disabled ? colors.gray : getBackgroundColor(),
-      borderRadius,
-      borderWidth,
-      borderColor: disabled ? colors.gray : getBorderColor(),
-      marginTop,
-    },
-    stylesContainer,
-  ];
+  text,
+  loading,
+}: Props) => {
+  if (typeButton === 'round') {
+    return (
+      <TouchableOpacity
+        onPress={onPress}
+        style={getButtonRoundStyles(
+          disabled,
+          backgroundColor,
+          borderColor,
+          typeButton,
+          borderRadius,
+          borderWidth,
+          marginTop,
+          size,
+          stylesContainer,
+        )}
+        disabled={disabled}>
+        {iconRound}
+      </TouchableOpacity>
+    );
+  }
 
   return (
     <TouchableOpacity
       disabled={disabled}
-      style={typeButton === 'link' ? {} : buttonStyles}
+      style={
+        typeButton === 'link'
+          ? {}
+          : getButtonStyles(
+              disabled,
+              backgroundColor,
+              borderColor,
+              typeButton,
+              borderRadius,
+              borderWidth,
+              marginTop,
+              stylesContainer,
+            )
+      }
       onPress={onPress}>
       {prefix && prefix}
       <Text
@@ -82,7 +95,9 @@ const Button: React.FC<Props> = ({
           disabled
             ? colors.desc
             : color ??
-              (typeButton === 'link' ? colors.facebook : getColorText())
+              (typeButton === 'link'
+                ? colors.facebook
+                : getColorText(color, typeButton))
         }
       />
       {loading && (
@@ -93,11 +108,3 @@ const Button: React.FC<Props> = ({
 };
 
 export default Button;
-const styles = StyleSheet.create({
-  button: {
-    minHeight: spacings.space_50,
-    ...globalStyles.row,
-    ...globalStyles.center,
-    gap: spacings.space_8,
-  },
-});

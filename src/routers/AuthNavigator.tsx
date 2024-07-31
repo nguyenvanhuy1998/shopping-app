@@ -11,6 +11,7 @@ import {
   SignUpScreen,
   WelcomeScreen,
 } from '../screens';
+import {User} from '../models';
 
 export type AuthStackParamList = {
   LoginScreen: undefined;
@@ -18,7 +19,9 @@ export type AuthStackParamList = {
   OnboardingScreen: undefined;
   SignUpScreen: undefined;
   ForgotPassword: undefined;
-  AuthSuccess: undefined;
+  AuthSuccess: {
+    currentUser?: User;
+  };
 };
 
 const Stack = createNativeStackNavigator<AuthStackParamList>();
@@ -29,11 +32,9 @@ const screenOptions: NativeStackNavigationOptions = {
 
 const AuthNavigator: React.FC = () => {
   return (
-    <Stack.Navigator
-      // initialRouteName="AuthSuccess"
-      screenOptions={screenOptions}>
-      <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
+    <Stack.Navigator screenOptions={screenOptions}>
       <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+      <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
       <Stack.Screen name="ForgotPassword" component={ForgotPassword} />

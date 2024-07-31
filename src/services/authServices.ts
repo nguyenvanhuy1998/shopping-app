@@ -1,29 +1,85 @@
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
-import {FormSignUpData} from '../utils';
+import {User} from '../models';
+import {
+  FormLoginData,
+  FormSignUpData,
+  getFirebaseErrorMessage,
+  isFirebaseError,
+} from '../utils';
+import Toast from 'react-native-toast-message';
 
-const authServices = {
+export const authServices = {
   signUpWithEmailAndPassword: async (body: FormSignUpData) => {
     try {
       const userCredential = await auth().createUserWithEmailAndPassword(
         body.email,
         body.password,
       );
-      const user = userCredential.user;
-      // Set user data in Firestore
-      await firestore().collection('users').doc(user.uid).set({
-        email: user.email,
-        username: body.username,
-        emailVerified: user.emailVerified,
-        photoURL: user.photoURL,
-        creationTime: user.metadata.creationTime,
-        lastSignInTime: user.metadata.lastSignInTime,
+      await userCredential.user.updateProfile({
+        displayName: body.username,
       });
-      return user;
+
+      const {uid, email, emailVerified, photoURL, metadata} =
+        userCredential.user;
+      const currentUser: User = {
+        uid,
+        email,
+        displayName: body.username,
+        emailVerified,
+        photoURL,
+        creationTime: metadata.creationTime,
+        lastSignInTime: metadata.lastSignInTime,
+      };
+
+      const userDocRef = firestore().collection('users').doc(uid);
+      await userDocRef.set(currentUser);
+
+      return currentUser;
     } catch (error) {
-      console.error('Error in signUpWithEmailAndPassword:', error);
-      throw error;
+      handleAuthError(error);
+    }
+  },
+
+  signInWithEmailAndPassword: async (body: FormLoginData) => {
+    try {
+      const userCredential = await auth().signInWithEmailAndPassword(
+        body.email,
+        body.password,
+      );
+      const {uid, metadata, emailVerified, email, displayName, photoURL} =
+        userCredential.user;
+
+      const userDocRef = firestore().collection('users').doc(uid);
+      await userDocRef.update({
+        emailVerified,
+        lastSignInTime: metadata.lastSignInTime,
+      });
+
+      const currentUser: User = {
+        uid,
+        email,
+        displayName,
+        emailVerified,
+        photoURL,
+        creationTime: metadata.creationTime,
+        lastSignInTime: metadata.lastSignInTime,
+      };
+
+      return currentUser;
+    } catch (error) {
+      handleAuthError(error);
     }
   },
 };
-export default authServices;
+
+const handleAuthError = (error: any) => {
+  const errorMessage = isFirebaseError(error)
+    ? getFirebaseErrorMessage(error)
+    : 'An unexpected error occurred';
+  Toast.show({
+    type: 'error',
+    text1: errorMessage,
+  });
+  throw error;
+};

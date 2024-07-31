@@ -1,11 +1,24 @@
+import {RouteProp, useRoute} from '@react-navigation/native';
 import {TickCircle} from 'iconsax-react-native';
 import React from 'react';
+import {useAppDispatch} from '../../app';
 import {Button, Container, Section, Text} from '../../components';
 import {colors, iconSizes, spacings} from '../../constants';
+import {AuthStackParamList} from '../../routers/AuthNavigator';
 import {globalStyles} from '../../styles';
+import {setUserToLS} from '../../utils';
+import {authActions} from './authSlice';
 
 const AuthSuccess = () => {
-  const handleStartShopping = () => {};
+  const route = useRoute<RouteProp<AuthStackParamList>>();
+  const dispatch = useAppDispatch();
+  const handleStartShopping = async () => {
+    const currentUser = route.params?.currentUser;
+    if (currentUser) {
+      dispatch(authActions.setUser(currentUser));
+      await setUserToLS(currentUser);
+    }
+  };
   return (
     <Container
       styleContainer={{

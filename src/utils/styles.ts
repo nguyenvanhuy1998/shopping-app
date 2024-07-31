@@ -1,5 +1,20 @@
-import {ColorValue, TextStyle} from 'react-native';
-import {colors, fontFamilies, fontSizes} from '../constants';
+import {
+  ColorValue,
+  StyleProp,
+  StyleSheet,
+  TextStyle,
+  ViewStyle,
+} from 'react-native';
+import {
+  colors,
+  fontFamilies,
+  fontSizes,
+  iconSizes,
+  spacings,
+} from '../constants';
+import {globalStyles} from '../styles';
+
+type ButtonType = 'link' | 'outline' | 'round' | undefined;
 
 export const getTextStyle = (
   typeText: 'Heading' | 'SubHeading' | 'Body' | undefined,
@@ -59,3 +74,100 @@ export const getTextStyle = (
       };
   }
 };
+
+const getColor = (
+  color: ColorValue | undefined,
+  typeButton: ButtonType,
+  defaultColor: ColorValue,
+  outlineColor: ColorValue,
+): ColorValue =>
+  color ?? (typeButton === 'outline' ? outlineColor : defaultColor);
+
+export const getBackgroundColor = (
+  backgroundColor: ColorValue | undefined,
+  typeButton: ButtonType,
+): ColorValue =>
+  getColor(backgroundColor, typeButton, colors.dark, colors.white);
+
+export const getBorderColor = (
+  borderColor: ColorValue | undefined,
+  typeButton: ButtonType,
+): ColorValue => getColor(borderColor, typeButton, colors.dark, colors.gray2);
+
+export const getColorText = (
+  color: ColorValue | undefined,
+  typeButton: ButtonType,
+): ColorValue => getColor(color, typeButton, colors.white, colors.dark);
+
+export const getButtonStyles = (
+  disabled: boolean | undefined,
+  backgroundColor: ColorValue | undefined,
+  borderColor: ColorValue | undefined,
+  typeButton: 'link' | 'outline' | 'round' | undefined,
+  borderRadius: number | undefined,
+  borderWidth: number | undefined,
+  marginTop: number | undefined,
+  stylesContainer: StyleProp<ViewStyle> | undefined,
+): StyleProp<ViewStyle> => [
+  styles.button,
+  {
+    backgroundColor: disabled
+      ? colors.gray
+      : getBackgroundColor(backgroundColor, typeButton),
+    borderRadius,
+    borderWidth,
+    borderColor: disabled
+      ? colors.gray
+      : getBorderColor(borderColor, typeButton),
+    marginTop,
+  },
+  stylesContainer,
+];
+
+export const getButtonRoundStyles = (
+  disabled: boolean | undefined,
+  backgroundColor: ColorValue | undefined,
+  borderColor: ColorValue | undefined,
+  typeButton: 'link' | 'outline' | 'round' | undefined,
+  borderRadius: number | undefined,
+  borderWidth: number | undefined,
+  marginTop: number | undefined,
+  size: 'small' | 'medium' | 'large' | undefined,
+  stylesContainer: StyleProp<ViewStyle>,
+): StyleProp<ViewStyle> => [
+  {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width:
+      size === 'small'
+        ? iconSizes.small
+        : size === 'medium'
+        ? iconSizes.medium30
+        : iconSizes.large,
+    height:
+      size === 'small'
+        ? iconSizes.small
+        : size === 'medium'
+        ? iconSizes.medium30
+        : iconSizes.large,
+    backgroundColor: disabled
+      ? colors.gray
+      : getBackgroundColor(backgroundColor, typeButton),
+    borderRadius,
+    borderWidth,
+    borderColor: disabled
+      ? colors.gray
+      : getBorderColor(borderColor, typeButton),
+    marginTop,
+  },
+  stylesContainer,
+];
+
+const styles = StyleSheet.create({
+  button: {
+    minHeight: spacings.space_50,
+    ...globalStyles.row,
+    ...globalStyles.center,
+    gap: spacings.space_8,
+  },
+});

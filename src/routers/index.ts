@@ -5,6 +5,7 @@ import NotificationNavigator from './NotificationNavigator';
 import ProfileNavigator from './ProfileNavigator';
 import HomeNavigator from './HomeNavigator';
 import TabNavigator from './TabNavigator';
+import Router from './Router';
 export {
   AuthNavigator,
   MainNavigator,
@@ -13,4 +14,5 @@ export {
   ProfileNavigator,
   HomeNavigator,
   TabNavigator,
+  Router,
 };

@@ -22,6 +22,8 @@ export function getFirebaseErrorMessage(
       return 'Email/password accounts are not enabled.';
     case 'auth/weak-password':
       return 'The password is too weak.';
+    case 'auth/invalid-credential':
+      return 'The supplied auth credential is incorrect, malformed or has expired.';
     default:
       return 'An unknown error occurred. Please try again.';
   }
