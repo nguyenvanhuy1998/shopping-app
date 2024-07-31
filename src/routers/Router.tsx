@@ -18,10 +18,10 @@ const Router: React.FC = () => {
         await dispatch(authActions.setUser(res));
       }
       SplashScreen.hide();
+
       return res;
     },
   });
-
   return isLoggedIn ? <MainNavigator /> : <AuthNavigator />;
 };
 

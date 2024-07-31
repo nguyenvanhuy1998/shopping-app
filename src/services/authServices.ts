@@ -12,10 +12,12 @@ import Toast from 'react-native-toast-message';
 export const authServices = {
   signUpWithEmailAndPassword: async (body: FormSignUpData) => {
     try {
+      // Create user with email and password
       const userCredential = await auth().createUserWithEmailAndPassword(
         body.email,
         body.password,
       );
+      // Update display name
       await userCredential.user.updateProfile({
         displayName: body.username,
       });
@@ -31,7 +33,7 @@ export const authServices = {
         creationTime: metadata.creationTime,
         lastSignInTime: metadata.lastSignInTime,
       };
-
+      // Set user to fire store
       const userDocRef = firestore().collection('users').doc(uid);
       await userDocRef.set(currentUser);
 
@@ -43,13 +45,14 @@ export const authServices = {
 
   signInWithEmailAndPassword: async (body: FormLoginData) => {
     try {
+      // Sign in with email and password
       const userCredential = await auth().signInWithEmailAndPassword(
         body.email,
         body.password,
       );
       const {uid, metadata, emailVerified, email, displayName, photoURL} =
         userCredential.user;
-
+      // Update user to fire store
       const userDocRef = firestore().collection('users').doc(uid);
       await userDocRef.update({
         emailVerified,
