@@ -1,14 +1,9 @@
-import {
-  HambergerMenu,
-  Menu,
-  SearchNormal,
-  SearchNormal1,
-} from 'iconsax-react-native';
+import {HambergerMenu, Menu, SearchNormal1} from 'iconsax-react-native';
 import React from 'react';
+import {useForm} from 'react-hook-form';
+import {StyleSheet, View} from 'react-native';
 import {Button, Image, Input, Row, Section, Text} from '../../../components';
 import {colors, iconSizes, images, spacings} from '../../../constants';
-import {StyleSheet, View} from 'react-native';
-import {useForm} from 'react-hook-form';
 import {FormSearch} from '../HomeScreen';
 
 interface Props {
