@@ -21,7 +21,7 @@ export const getTextStyle = (
   size: 'small' | 'medium' | 'large' | undefined,
   color: ColorValue | undefined,
   fontFamily: string | undefined,
-  textAlign: 'left' | 'right' | 'justify' | 'auto',
+  textAlign: 'left' | 'right' | 'justify' | 'auto' | 'center' | undefined,
   lineHeight: number | undefined,
 ): TextStyle => {
   const baseStyle: TextStyle = {
@@ -133,23 +133,26 @@ export const getButtonRoundStyles = (
   borderWidth: number | undefined,
   marginTop: number | undefined,
   size: 'small' | 'medium' | 'large' | undefined,
+  dimension: number | undefined,
   stylesContainer: StyleProp<ViewStyle>,
 ): StyleProp<ViewStyle> => [
   {
     alignItems: 'center',
     justifyContent: 'center',
-    width:
-      size === 'small'
-        ? iconSizes.small
-        : size === 'medium'
-        ? iconSizes.medium30
-        : iconSizes.large,
-    height:
-      size === 'small'
-        ? iconSizes.small
-        : size === 'medium'
-        ? iconSizes.medium30
-        : iconSizes.large,
+    width: dimension
+      ? dimension
+      : size === 'small'
+      ? iconSizes.small
+      : size === 'medium'
+      ? iconSizes.medium30
+      : iconSizes.large,
+    height: dimension
+      ? dimension
+      : size === 'small'
+      ? iconSizes.small
+      : size === 'medium'
+      ? iconSizes.medium30
+      : iconSizes.large,
     backgroundColor: disabled
       ? colors.gray
       : getBackgroundColor(backgroundColor, typeButton),

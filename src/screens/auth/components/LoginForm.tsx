@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-shadow */
 import {yupResolver} from '@hookform/resolvers/yup';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
+import {Apple, Facebook, Google} from 'iconsax-react-native';
 import React from 'react';
 import {useForm} from 'react-hook-form';
 import {ScrollView, StyleSheet, View} from 'react-native';
 import {Button, Input, Row, Section, Text} from '../../../components';
-import {colors, fontSizes, spacings} from '../../../constants';
+import {colors, spacings} from '../../../constants';
+import {AuthStackParamList} from '../../../routers/AuthNavigator';
 import {globalStyles} from '../../../styles';
 import {FormLoginData, schema} from '../../../utils';
-import {Apple, Facebook, Google} from 'iconsax-react-native';
-import {NavigationProp, useNavigation} from '@react-navigation/native';
-import {AuthStackParamList} from '../../../routers/AuthNavigator';
 
 interface LoginProps {
   loading?: boolean;

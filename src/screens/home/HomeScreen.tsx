@@ -1,11 +1,22 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Container} from '../../components';
+import {colors} from '../../constants';
+import {SearchHeader} from './components';
 
+export interface FormSearch {
+  search: string;
+}
 const HomeScreen = () => {
+  const initialValues: FormSearch = {
+    search: '',
+  };
   return (
-    <View>
-      <Text>HomeScreen</Text>
-    </View>
+    <Container
+      styleContainer={{
+        backgroundColor: colors.white,
+      }}>
+      <SearchHeader initialValues={initialValues} />
+    </Container>
   );
 };
 

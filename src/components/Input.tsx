@@ -1,7 +1,15 @@
 import {CloseCircle, Eye, EyeSlash} from 'iconsax-react-native';
 import React, {ReactNode, useState} from 'react';
 import {Control, useController} from 'react-hook-form';
-import {StyleSheet, TextInput, TextInputProps, View} from 'react-native';
+import {
+  StyleProp,
+  StyleSheet,
+  TextInput,
+  TextInputProps,
+  TextStyle,
+  View,
+  ViewStyle,
+} from 'react-native';
 import {colors, iconSizes, spacings} from '../constants';
 import {globalStyles} from '../styles';
 import Row from './Row';
@@ -11,11 +19,26 @@ interface InputProps extends TextInputProps {
   name: string;
   control: Control<any>;
   label?: string;
+  prefix?: ReactNode;
   suffix?: ReactNode;
   isPassword?: boolean;
+  typeInput?: 'secondary';
+  stylesInputContainer?: StyleProp<ViewStyle>;
+  stylesInput?: StyleProp<TextStyle>;
 }
 
-const Input = ({name, control, label, isPassword, ...rest}: InputProps) => {
+const Input = ({
+  name,
+  control,
+  label,
+  typeInput,
+  isPassword,
+  stylesInputContainer,
+  stylesInput,
+  prefix,
+  suffix,
+  ...rest
+}: InputProps) => {
   const [isShowPassword, setIsShowPassword] = useState(isPassword);
   const {
     field: {value, onChange, onBlur, ref},
@@ -52,6 +75,22 @@ const Input = ({name, control, label, isPassword, ...rest}: InputProps) => {
       />
     ) : null;
   };
+  if (typeInput === 'secondary') {
+    return (
+      <View style={[styles.inputSecondaryContainer, stylesInputContainer]}>
+        {prefix && prefix}
+        <TextInput
+          {...rest}
+          style={[styles.inputSecondary, globalStyles.text, stylesInput]}
+          ref={ref}
+          value={value}
+          onChangeText={onChange}
+          onBlur={onBlur}
+        />
+        {suffix && suffix}
+      </View>
+    );
+  }
   return (
     <View style={styles.container}>
       {label && <Text text={label} typeText="SubHeading" size="small" />}
@@ -98,8 +137,23 @@ const styles = StyleSheet.create({
     marginTop: spacings.space_4,
     borderBottomWidth: 1,
   },
+  inputSecondaryContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacings.space_8,
+    minHeight: spacings.space_50,
+    backgroundColor: colors.gray,
+    paddingHorizontal: spacings.space_16,
+    flex: 1,
+    borderRadius: spacings.space_30,
+  },
   input: {
     marginRight: spacings.space_8,
+    flex: 1,
+    height: '100%',
+    paddingVertical: 0,
+  },
+  inputSecondary: {
     flex: 1,
     height: '100%',
     paddingVertical: 0,

@@ -26,6 +26,7 @@ interface Props {
   prefix?: React.ReactNode;
   text?: string;
   loading?: boolean;
+  dimension?: number;
 }
 const Button = ({
   onPress,
@@ -43,6 +44,7 @@ const Button = ({
   prefix,
   text,
   loading,
+  dimension,
 }: Props) => {
   if (typeButton === 'round') {
     return (
@@ -57,6 +59,7 @@ const Button = ({
           borderWidth,
           marginTop,
           size,
+          dimension,
           stylesContainer,
         )}
         disabled={disabled}>
