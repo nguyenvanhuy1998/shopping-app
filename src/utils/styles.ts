@@ -17,7 +17,7 @@ import {globalStyles} from '../styles';
 type ButtonType = 'link' | 'outline' | 'round' | undefined;
 
 export const getTextStyle = (
-  typeText: 'Heading' | 'SubHeading' | 'Body' | undefined,
+  typeText: 'Heading' | 'SubHeading' | 'Body' | 'Small' | undefined,
   size: 'small' | 'medium' | 'large' | undefined,
   color: ColorValue | undefined,
   fontFamily: string | undefined,
@@ -65,6 +65,13 @@ export const getTextStyle = (
         color: color ?? colors.desc,
         fontFamily: fontFamily ?? fontFamilies.poppinsRegular,
       };
+    case 'Small':
+      return {
+        ...baseStyle,
+        fontSize: fontSizes.size10,
+        color: color ?? colors.white,
+        fontFamily: fontFamily ?? fontFamilies.poppinsBold,
+      };
     default:
       return {
         ...baseStyle,
@@ -100,6 +107,8 @@ export const getColorText = (
 ): ColorValue => getColor(color, typeButton, colors.white, colors.dark);
 
 export const getButtonStyles = (
+  size: 'small' | 'medium' | 'large' | undefined,
+  width: number | undefined,
   disabled: boolean | undefined,
   backgroundColor: ColorValue | undefined,
   borderColor: ColorValue | undefined,
@@ -111,6 +120,13 @@ export const getButtonStyles = (
 ): StyleProp<ViewStyle> => [
   styles.button,
   {
+    minHeight:
+      size === 'small'
+        ? spacings.space_24
+        : size === 'medium'
+        ? spacings.space_32
+        : spacings.space_50,
+    width,
     backgroundColor: disabled
       ? colors.gray
       : getBackgroundColor(backgroundColor, typeButton),
@@ -168,7 +184,6 @@ export const getButtonRoundStyles = (
 
 const styles = StyleSheet.create({
   button: {
-    minHeight: spacings.space_50,
     ...globalStyles.row,
     ...globalStyles.center,
     gap: spacings.space_8,

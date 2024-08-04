@@ -11,7 +11,7 @@ type Props = {
   text?: string;
   styles?: StyleProp<TextStyle>;
   marginTop?: number;
-  typeText?: 'Heading' | 'SubHeading' | 'Body';
+  typeText?: 'Heading' | 'SubHeading' | 'Body' | 'Small';
   size?: 'small' | 'medium' | 'large';
   color?: ColorValue;
   fontFamily?: string;

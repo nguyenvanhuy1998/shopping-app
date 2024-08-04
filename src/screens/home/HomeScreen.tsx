@@ -1,9 +1,10 @@
-import React from 'react';
-import {Container} from '../../components';
-import {colors} from '../../constants';
-import {OfferList, SearchHeader} from './components';
 import {useQuery} from '@tanstack/react-query';
+import React from 'react';
+import {ActivityIndicator} from 'react-native';
+import {Container} from '../../components';
+import {collectionNames, colors} from '../../constants';
 import {offersServices} from '../../services';
+import {OfferList, SearchHeader} from './components';
 
 export interface FormSearch {
   search: string;
@@ -12,18 +13,18 @@ const HomeScreen = () => {
   const initialValues: FormSearch = {
     search: '',
   };
-  const {data} = useQuery({
-    queryKey: ['offers'],
+  const {data: offers, isPending} = useQuery({
+    queryKey: [`${collectionNames.offers}`],
     queryFn: () => offersServices.getOffers(),
   });
-  console.log({data});
+  console.log({offers});
   return (
     <Container
       styleContainer={{
         backgroundColor: colors.white,
       }}>
       <SearchHeader initialValues={initialValues} />
-      <OfferList />
+      {isPending ? <ActivityIndicator /> : <OfferList offers={offers} />}
     </Container>
   );
 };

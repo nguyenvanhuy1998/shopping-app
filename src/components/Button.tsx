@@ -22,11 +22,13 @@ interface Props {
   marginTop?: number;
   stylesContainer?: StyleProp<ViewStyle>;
   size?: 'small' | 'medium' | 'large';
+  typeText?: 'Heading' | 'SubHeading' | 'Body' | 'Small';
   iconRound?: React.ReactNode;
   prefix?: React.ReactNode;
   text?: string;
   loading?: boolean;
   dimension?: number;
+  width?: number;
 }
 const Button = ({
   onPress,
@@ -39,12 +41,14 @@ const Button = ({
   borderWidth = 1,
   marginTop,
   stylesContainer,
+  typeText,
   size,
   iconRound,
   prefix,
   text,
   loading,
   dimension,
+  width,
 }: Props) => {
   if (typeButton === 'round') {
     return (
@@ -75,6 +79,8 @@ const Button = ({
         typeButton === 'link'
           ? {}
           : getButtonStyles(
+              size,
+              width,
               disabled,
               backgroundColor,
               borderColor,
@@ -89,7 +95,9 @@ const Button = ({
       {prefix && prefix}
       <Text
         text={text}
-        typeText={typeButton === 'link' ? 'Body' : 'SubHeading'}
+        typeText={
+          typeText ? typeText : typeButton === 'link' ? 'Body' : 'SubHeading'
+        }
         size={size ? size : typeButton === 'link' ? 'medium' : 'small'}
         fontFamily={
           typeButton === 'link' ? fontFamilies.poppinsSemiBold : undefined
