@@ -1,2 +1,3 @@
 import SearchHeader from './SearchHeader';
-export {SearchHeader};
+import OfferList from './OfferList';
+export {SearchHeader, OfferList};
