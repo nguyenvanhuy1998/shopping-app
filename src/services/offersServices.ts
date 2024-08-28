@@ -13,8 +13,8 @@ export const offersServices = {
         ...doc.data(),
       }));
       const filteredOffers = offers.filter(
-        ({startAt, endAt}: Offer) =>
-          startAt <= currentTime && endAt >= currentTime,
+        ({startDate, endDate}: Offer) =>
+          startDate <= currentTime && endDate >= currentTime,
       );
       return filteredOffers;
     } catch (error) {

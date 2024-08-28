@@ -13,7 +13,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		19A5A2712C58BB88002099CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19A5A2702C58BB88002099CF /* GoogleService-Info.plist */; };
+		19D3C3F32C7F184500D974B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19D3C3F22C7F184500D974B8 /* GoogleService-Info.plist */; };
 		1E08EC28B50348A6AF187C1C /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5290615A36E84599837BE42A /* Zocial.ttf */; };
 		2413174FADDE48C8BB184E8C /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D087D84A0B44802B23E38F8 /* Poppins-Medium.ttf */; };
 		24F5C99EF0F14F18995A30FD /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F44E0F86DF0146ED9DB92770 /* Feather.ttf */; };
@@ -70,7 +70,7 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Shara/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = Shara/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		1600ED3300F64D249380B8D8 /* Poppins-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Light.ttf"; path = "../assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; };
-		19A5A2702C58BB88002099CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		19D3C3F22C7F184500D974B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1FEF2194FD844DE79549A4FB /* Roboto-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Medium.ttf"; path = "../assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		274376AA251F4F27B3AB1F01 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-Shara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shara.debug.xcconfig"; path = "Target Support Files/Pods-Shara/Pods-Shara.debug.xcconfig"; sourceTree = "<group>"; };
@@ -214,7 +214,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				19A5A2702C58BB88002099CF /* GoogleService-Info.plist */,
+				19D3C3F22C7F184500D974B8 /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* Shara */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* SharaTests */,
@@ -367,7 +367,7 @@
 				A332F4C2BED94E1483EB8F4B /* FontAwesome6_Solid.ttf in Resources */,
 				9F02A5FEB3194D759C3596BA /* Fontisto.ttf in Resources */,
 				B7786285A3D446AEAB4C97A8 /* Foundation.ttf in Resources */,
-				19A5A2712C58BB88002099CF /* GoogleService-Info.plist in Resources */,
+				19D3C3F32C7F184500D974B8 /* GoogleService-Info.plist in Resources */,
 				3ED9ED9733864732AD4ED879 /* Ionicons.ttf in Resources */,
 				02776FCFA302477EA1CD7C24 /* MaterialCommunityIcons.ttf in Resources */,
 				D336D9B8CA694F9593C9115D /* MaterialIcons.ttf in Resources */,
@@ -741,10 +741,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -827,10 +824,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
